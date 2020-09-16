@@ -17,12 +17,12 @@ public class UserManager {
 
     private DB db =new DB();
 
-    public User get(String pseudo, String pass) {
+    public User get(String login, String pass) {
         User user = null;
-        String sql = "SELECT * FROM users WHERE pseudo=? AND pass=?";
+        String sql = "SELECT * FROM utilisateur WHERE login=? AND mdp=?";
         try {
             db.initPrepar(sql);
-            db.getPstm().setString(1, pseudo);
+            db.getPstm().setString(1, login);
             db.getPstm().setString(2, pass);
 
             ResultSet rs = db.executeSelect();

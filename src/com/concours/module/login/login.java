@@ -1,7 +1,5 @@
 package com.concours.module.login;
 
-
-
 import animatefx.animation.Flash;
 import animatefx.animation.Pulse;
 import animatefx.animation.SlideInLeft;

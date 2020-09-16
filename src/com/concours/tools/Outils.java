@@ -36,7 +36,7 @@ public class Outils {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle(title);
-
+        stage.resizableProperty().setValue(false);
         stage.show();
     }
     private void loadSubPage(ActionEvent event, String title, String url) throws IOException {
@@ -47,7 +47,7 @@ public class Outils {
         Stage stage = new Stage();
         stage.setScene(scene);
         stage.setTitle(title);
-
+        stage.resizableProperty().setValue(false);
         stage.show();
     }
     public static void load(ActionEvent event, String title, String url) throws  IOException {

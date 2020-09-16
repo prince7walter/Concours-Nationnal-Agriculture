@@ -19,6 +19,7 @@ package com.concours.global;
 
 public class User {
 
+    private String login;
     private String userName;
     private String fullName;
     private String email;
@@ -34,7 +35,8 @@ public class User {
     }
 
 
-    public User(String userName, String fullName, String email, String password) {
+    public User(String login,String userName, String fullName, String email, String password) {
+        this.login = login;
         this.userName = userName;
         this.fullName = fullName;
         this.email = email;
@@ -75,8 +77,12 @@ public class User {
 
     @Override
     public String toString() {
-        return "User[userName = " +userName+ ", " +
-                "fullName = " +fullName +", " +
-                "email = " +email+ ", password = " + password +"]";
+        return "User{" +
+                "login='" + login + '\'' +
+                ", userName='" + userName + '\'' +
+                ", fullName='" + fullName + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

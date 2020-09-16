@@ -48,24 +48,24 @@ public class dashbord implements Initializable {
     @FXML private TextField lieuN;
     @FXML private TextField nation;
     @FXML private TextField contact;
-    @FXML private TextField typPc;
+    @FXML private TextField numDipl;
     @FXML private TextField numPc;
     @FXML private TextField imgPc;
     @FXML private TextField niveau;
+    @FXML private ComboBox combo_diplome;
     @FXML private ComboBox combo_piece;
     @FXML private TextField diplome;
     @FXML private TextField localisation;
     @FXML private TextField superficie;
-    @FXML private TextField culture;
-    @FXML private TextField methode;
-    @FXML private TextField annee;
+    @FXML private ComboBox combo_culture;
+    @FXML private ComboBox combo_methode;
     @FXML private TextField certificat;
     @FXML private TextField employe;
     @FXML private TextField employeFem;
-    @FXML private TextField employeDec;
+    @FXML private TextField imgPlt;
     @FXML private TextField salaire;
     @FXML private TextField age;
-    @FXML private TextField papier;
+    @FXML private TextField emplCert;
 
     @FXML private TableView<Planteur> tableView;
     @FXML private TableColumn<Planteur, String> matriculeView;
@@ -98,6 +98,10 @@ public class dashbord implements Initializable {
         addEffect(nom); addEffect(prenom); addEffect(email); addEffect(lieuN); addEffect(nation); addEffect(contact); addEffect(typPc);
         addEffect(numPc); addEffect(imgPc); addEffect(niveau); addEffect(diplome); addEffect(localisation); addEffect(superficie); addEffect(culture);
         addEffect(methode); addEffect(annee); addEffect(certificat);
+
+        img.setEditable(false); imgPc.setEditable(false); certificat.setEditable(false); diplome.setEditable(false); emplCert.setEditable(false);
+        imgPlt.setEditable(false);
+
 
 
         //matriculeView.setCellValueFactory(new PropertyValueFactory<>("matricule"));
