@@ -346,8 +346,8 @@ public class dashbord implements Initializable {
     public void clearvalue(){
         img.setText(""); nom.setText(""); prenom.setText(""); email.setText(""); dateN.getEditor().setText("");
         lieuN.setText(""); nation.setText(""); contact.setText(""); numDipl.setText(""); numPc.setText(""); imgPc.setText("");
-        niveau.setText(""); combo_diplome.getEditor().setText(""); combo_piece.getEditor().setText(""); diplome.setText("");
-        localisation.setText(""); superficie.setText(""); combo_culture.setValue(""); combo_methode.getEditor().setText("");
+        niveau.setText(""); combo_diplome.setValue(""); combo_piece.setValue(""); diplome.setText("");
+        localisation.setText(""); superficie.setText(""); combo_culture.setValue(""); combo_methode.setValue("");
         certificat.setText(""); employe.setText(""); employeFem.setText(""); imgPlt.setText(""); salaire.setText(""); age.setText("");
         emplCert.setText("");
     }
