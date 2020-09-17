@@ -146,6 +146,7 @@ public class dashbord implements Initializable {
         try {
             db.initPrepar(sql);
             rs=db.executeSelect();
+            combo_piece.getItems().add("");
             while (rs.next()){
                 combo_piece.getItems().add(rs.getString(1));
             }
@@ -165,6 +166,7 @@ public class dashbord implements Initializable {
         try {
             db.initPrepar(sql);
             rs=db.executeSelect();
+            combo_diplome.getItems().add("");
             while (rs.next()){
                 combo_diplome.getItems().add(rs.getString(1));
             }
@@ -183,6 +185,7 @@ public class dashbord implements Initializable {
         try {
             db.initPrepar(sql);
             rs=db.executeSelect();
+            combo_culture.getItems().add("");
             while (rs.next()){
                 combo_culture.getItems().add(rs.getString(1));
             }
@@ -201,6 +204,7 @@ public class dashbord implements Initializable {
         try {
             db.initPrepar(sql);
             rs=db.executeSelect();
+            combo_methode.getItems().add("");
             while (rs.next()){
                 combo_methode.getItems().add(rs.getString(1));
             }
@@ -280,11 +284,10 @@ public class dashbord implements Initializable {
         return !img.getText().isEmpty() && !nom.getText().isEmpty() && !prenom.getText().isEmpty() && !email.getText().isEmpty() &&
                 !dateN.getEditor().getText().isEmpty() && !lieuN.getText().isEmpty() && !nation.getText().isEmpty() &&
                 !contact.getText().isEmpty() && !numDipl.getText().isEmpty() && !niveau.getText().isEmpty() && !diplome.getText().isEmpty() &&
-                !imgPc.getText().isEmpty() && !combo_diplome.getEditor().getText().isEmpty() && !combo_piece.getEditor().getText().isEmpty() &&
-                !localisation.getText().isEmpty() && !superficie.getText().isEmpty() && !combo_culture.getEditor().getText().isEmpty() &&
-                !combo_methode.getEditor().getText().isEmpty() && !age.getText().isEmpty() && !salaire.getText().isEmpty() &&
-                !imgPlt.getText().isEmpty() && !certificat.getText().isEmpty() && !employe.getText().isEmpty() &&
-                !numPc.getText().isEmpty() && !employeFem.getText().isEmpty() && !emplCert.getText().isEmpty();
+                !imgPc.getText().isEmpty() && !localisation.getText().isEmpty() && !superficie.getText().isEmpty() &&
+                !age.getText().isEmpty() && !salaire.getText().isEmpty() && !imgPlt.getText().isEmpty() &&
+                !certificat.getText().isEmpty() && !employe.getText().isEmpty() && !numPc.getText().isEmpty() &&
+                !employeFem.getText().isEmpty() && !emplCert.getText().isEmpty();
     }
 
     @FXML
@@ -305,13 +308,13 @@ public class dashbord implements Initializable {
         planteur.setNumPc(numPc.getText());
         planteur.setImgPc( imgPc.getText());
         planteur.setNiveau( niveau.getText());
-        planteur.setTypeDipl(combo_diplome.getEditor().getText());
-        planteur.setTypePiec(combo_piece.getEditor().getText());
+        planteur.setTypeDipl(combo_diplome.getSelectionModel().getSelectedIndex());
+        planteur.setTypePiec(combo_piece.getSelectionModel().getSelectedIndex());
         planteur.setDiplome( diplome.getText());
         planteur.setLocalisation( localisation.getText());
         planteur.setSuperficie( superficie.getText());
-        planteur.setCulture(combo_culture.getEditor().getText());
-        planteur.setMethode(combo_methode.getEditor().getText());
+        planteur.setCulture(combo_culture.getSelectionModel().getSelectedIndex());
+        planteur.setMethode(combo_methode.getSelectionModel().getSelectedIndex());
         planteur.setCertificat( certificat.getText());
         planteur.setEmploye( employe.getText());
         planteur.setEmployeFem( employeFem.getText());
@@ -321,11 +324,10 @@ public class dashbord implements Initializable {
         planteur.setEmplCert( emplCert.getText());
 
 
-
         int ok = planteurM.add(planteur);
         if (ok != 0 && validInscription()) {
             Notification.NotifSucces("Super", "Vous avez ajouter un Candidat");
-            //load();
+            clearvalue();
         } else {
             Notification.NotifError("Erreur", "Veuillez saisir tous les champs");
         }
@@ -339,5 +341,14 @@ public class dashbord implements Initializable {
             planteurs.add(p);
         }
         tableView.setItems(planteurs);
+    }
+
+    public void clearvalue(){
+        img.setText(""); nom.setText(""); prenom.setText(""); email.setText(""); dateN.getEditor().setText("");
+        lieuN.setText(""); nation.setText(""); contact.setText(""); numDipl.setText(""); numPc.setText(""); imgPc.setText("");
+        niveau.setText(""); combo_diplome.getEditor().setText(""); combo_piece.getEditor().setText(""); diplome.setText("");
+        localisation.setText(""); superficie.setText(""); combo_culture.setValue(""); combo_methode.getEditor().setText("");
+        certificat.setText(""); employe.setText(""); employeFem.setText(""); imgPlt.setText(""); salaire.setText(""); age.setText("");
+        emplCert.setText("");
     }
 }

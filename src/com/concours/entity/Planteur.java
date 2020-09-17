@@ -18,13 +18,13 @@ public class Planteur {
       private String numPc;
       private String imgPc;
       private String niveau;
-      private String typeDipl;
-      private String typePiec;
+      private int typeDipl;
+      private int typePiec;
       private String diplome;
       private String localisation;
       private String superficie;
-      private String culture;
-      private String methode;
+      private int culture;
+      private int methode;
       private String certificat;
       private String employe;
       private String employeFem;
@@ -36,20 +36,12 @@ public class Planteur {
     public Planteur() {
     }
 
-    public Planteur(String matricule, String nom, String prenom, String email, String dateN, String lieuN, String nation, String contact, String img, String numDipl, String numPc, String imgPc, String niveau, String typeDipl, String typePiec, String diplome, String localisation, String superficie, String culture, String methode, String certificat, String employe, String employeFem, String imgPlt, String salaire, String age, String emplCert) {
+    public Planteur(String matricule, String nom, String prenom, String email, String dateN, String lieuN, String nation, String contact, String img, String numDipl, String numPc, String imgPc, String niveau, int typeDipl, int typePiec, String diplome, String localisation, String superficie, int culture, int methode, String certificat, String employe, String employeFem, String imgPlt, String salaire, String age, String emplCert) {
         this.matricule = matricule; this.nom = nom; this.prenom = prenom; this.email = email; this.dateN = dateN; this.lieuN = lieuN; this.nation = nation;
         this.contact = contact; this.img=img; this.numDipl = numDipl; this.numPc = numPc; this.imgPc = imgPc; this.niveau = niveau; this.typeDipl = typeDipl;
         this.typePiec = typePiec; this.diplome = diplome; this.localisation = localisation; this.superficie = superficie; this.culture = culture;
         this.methode = methode; this.certificat = certificat; this.employe = employe; this.employeFem = employeFem; this.imgPlt = imgPlt;
         this.salaire = salaire; this.age = age; this.emplCert = emplCert;
-    }
-
-    public String getImg() {
-        return img;
-    }
-
-    public void setImg(String img) {
-        this.img = img;
     }
 
     public String getMatricule() {
@@ -116,6 +108,14 @@ public class Planteur {
         this.contact = contact;
     }
 
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
     public String getNumDipl() {
         return numDipl;
     }
@@ -148,19 +148,19 @@ public class Planteur {
         this.niveau = niveau;
     }
 
-    public String getTypeDipl() {
+    public int getTypeDipl() {
         return typeDipl;
     }
 
-    public void setTypeDipl(String typeDipl) {
+    public void setTypeDipl(int typeDipl) {
         this.typeDipl = typeDipl;
     }
 
-    public String getTypePiec() {
+    public int getTypePiec() {
         return typePiec;
     }
 
-    public void setTypePiec(String typePiec) {
+    public void setTypePiec(int typePiec) {
         this.typePiec = typePiec;
     }
 
@@ -188,19 +188,19 @@ public class Planteur {
         this.superficie = superficie;
     }
 
-    public String getCulture() {
+    public int getCulture() {
         return culture;
     }
 
-    public void setCulture(String culture) {
+    public void setCulture(int culture) {
         this.culture = culture;
     }
 
-    public String getMethode() {
+    public int getMethode() {
         return methode;
     }
 
-    public void setMethode(String methode) {
+    public void setMethode(int methode) {
         this.methode = methode;
     }
 
@@ -258,5 +258,38 @@ public class Planteur {
 
     public void setEmplCert(String emplCert) {
         this.emplCert = emplCert;
+    }
+
+    @Override
+    public String toString() {
+        return "Planteur{" +
+                "matricule='" + matricule + '\'' +
+                ", nom='" + nom + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", email='" + email + '\'' +
+                ", dateN='" + dateN + '\'' +
+                ", lieuN='" + lieuN + '\'' +
+                ", nation='" + nation + '\'' +
+                ", contact='" + contact + '\'' +
+                ", img='" + img + '\'' +
+                ", numDipl='" + numDipl + '\'' +
+                ", numPc='" + numPc + '\'' +
+                ", imgPc='" + imgPc + '\'' +
+                ", niveau='" + niveau + '\'' +
+                ", typeDipl=" + typeDipl +
+                ", typePiec=" + typePiec +
+                ", diplome='" + diplome + '\'' +
+                ", localisation='" + localisation + '\'' +
+                ", superficie='" + superficie + '\'' +
+                ", culture=" + culture +
+                ", methode=" + methode +
+                ", certificat='" + certificat + '\'' +
+                ", employe='" + employe + '\'' +
+                ", employeFem='" + employeFem + '\'' +
+                ", imgPlt='" + imgPlt + '\'' +
+                ", salaire='" + salaire + '\'' +
+                ", age='" + age + '\'' +
+                ", emplCert='" + emplCert + '\'' +
+                '}';
     }
 }

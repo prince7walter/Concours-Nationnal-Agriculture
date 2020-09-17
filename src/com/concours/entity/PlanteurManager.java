@@ -28,7 +28,7 @@ public class PlanteurManager {
             db.getPstm().setString(7, planteur.getNation());
             db.getPstm().setString(8, planteur.getContact());
             db.getPstm().setString(9, planteur.getNiveau());
-            db.getPstm().setString(10, planteur.getTypePiec());
+            db.getPstm().setInt(10, planteur.getTypePiec());
             db.getPstm().setString(11, planteur.getImg());
 
             ok = db.executeMaj();
@@ -44,8 +44,8 @@ public class PlanteurManager {
             db.getPstm().setString(4, planteur.getCertificat());
             db.getPstm().setString(5, planteur.getImgPlt());
             db.getPstm().setString(6, "PLTR"+planteur.getDateN());
-            db.getPstm().setString(7, planteur.getCulture());
-            db.getPstm().setString(8, planteur.getMethode());
+            db.getPstm().setInt(7, planteur.getCulture());
+            db.getPstm().setInt(8, planteur.getMethode());
 
             ok= db.executeMaj();
         } catch (Exception ex){
@@ -82,7 +82,7 @@ public class PlanteurManager {
             db.getPstm().setString(2, planteur.getImgPc());
             db.getPstm().setString(3, planteur.getNumPc());
             db.getPstm().setString(4, "PLTR"+planteur.getDateN());
-            db.getPstm().setString(5, planteur.getTypePiec());
+            db.getPstm().setInt(5, planteur.getTypePiec());
 
             ok=db.executeMaj();
         } catch (Exception ex){
@@ -108,20 +108,6 @@ public class PlanteurManager {
                 pl.setDateN(rs.getNString("daten"));
                 pl.setLocalisation(rs.getNString("nom"));
                 pl.setSuperficie(rs.getNString("prenom"));
-                pl.setCulture(rs.getNString("nom"));
-                pl.setSalaire(rs.getNString("lieuN"));
-                pl.setEmplCert("dd"); pl.setMethode("dd");
-                pl.setAge("dd");
-                pl.setImg("dd");
-                pl.setNumPc("dd");
-                pl.setImgPlt("dd");
-                pl.setEmployeFem("dd");
-                pl.setEmploye("dd");
-                pl.setEmail("dd");
-                pl.setLieuN("dd");
-                pl.setContact("dd");
-                pl.setTypeDipl("dd");
-                pl.setTypePiec("dd");
                 pl.setNumDipl("dd");
                 pl.setCertificat("dd");
                 pl.setDiplome("dd");

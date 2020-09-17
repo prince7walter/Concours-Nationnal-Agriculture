@@ -567,3 +567,5 @@ String sql ="SELECT * FROM users";
                }
                combo_piece.setItems(pieceTypes);
            }
+
+           img nom prenom email dateN lieuN nation contact numDipl numPc imgPc niveau combo_diplome combo_piece diplome localisation superficie combo_culture combo_methode certificat employe employeFem imgPlt salaire age emplCert;
