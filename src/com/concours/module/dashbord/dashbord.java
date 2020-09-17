@@ -13,6 +13,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
@@ -21,6 +22,9 @@ import javafx.util.Duration;
 
 import java.io.File;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -99,7 +103,17 @@ public class dashbord implements Initializable {
         img.setEditable(false); imgPc.setEditable(false); certificat.setEditable(false); diplome.setEditable(false); emplCert.setEditable(false);
         imgPlt.setEditable(false);
 
-        addPieceType(); addDiplType(); addCulture(); addMethode();
+        addPieceType();
+        addDiplType(); addCulture(); addMethode();
+
+        //matriculeView.setCellValueFactory(new PropertyValueFactory<>("matricule"));
+        //prenomView.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        naissView.setCellValueFactory(new PropertyValueFactory<>("dateN"));
+        lieuView.setCellValueFactory(new PropertyValueFactory<>("localisation"));
+        superficieView.setCellValueFactory(new PropertyValueFactory<>("superficie"));
+        cultureView.setCellValueFactory(new PropertyValueFactory<>("culture"));
+        avisView.setCellValueFactory(new PropertyValueFactory<>("lieun"));
+        //loadPlanteur();
 
     }
 
@@ -121,48 +135,78 @@ public class dashbord implements Initializable {
     }
 
     DB db = new DB();
+
     @FXML
     private void addPieceType()
     {
-        ObservableList<PieceType> pieceTypes = FXCollections.observableArrayList();
-        List<PieceType> pclist = pieceTypeM.get();
-        for (PieceType p : pclist){
-            pieceTypes.add(p);
+        db.getConnection();
+        ResultSet rs;
+        String sql="Select libelle_type_piece From type_piece";
+
+        try {
+            db.initPrepar(sql);
+            rs=db.executeSelect();
+            while (rs.next()){
+                combo_piece.getItems().add(rs.getString(1));
+            }
+        }catch(Exception e){
+            e.printStackTrace();
         }
-        combo_piece.setItems(pieceTypes);
     }
+
 
     @FXML
     private void addDiplType()
     {
-       ObservableList<DiplomeType> diplomeTypes = FXCollections.observableArrayList();
-        List<DiplomeType> dplist = diplomeM.get();
-        for (DiplomeType d : dplist){
-            diplomeTypes.add(d);
+        db.getConnection();
+        ResultSet rs;
+        String sql="Select libelle_diplome From type_diplome";
+
+        try {
+            db.initPrepar(sql);
+            rs=db.executeSelect();
+            while (rs.next()){
+                combo_diplome.getItems().add(rs.getString(1));
+            }
+        }catch(Exception e){
+            e.printStackTrace();
         }
-        combo_diplome.setItems(diplomeTypes);
     }
 
     @FXML
     private void addCulture()
     {
-        ObservableList<CultureType> cultureTypes = FXCollections.observableArrayList();
-        List<CultureType> cllist = cultureTypeM.get();
-        for (CultureType c : cllist){
-            cultureTypes.add(c);
+        db.getConnection();
+        ResultSet rs;
+        String sql="Select libelle_type_culture From type_culture";
+
+        try {
+            db.initPrepar(sql);
+            rs=db.executeSelect();
+            while (rs.next()){
+                combo_culture.getItems().add(rs.getString(1));
+            }
+        }catch(Exception e){
+            e.printStackTrace();
         }
-        combo_culture.setItems(cultureTypes);
     }
 
     @FXML
     private void addMethode()
     {
-        ObservableList<Methode> methodes = FXCollections.observableArrayList();
-        List<Methode> mdlist = methodeM.get();
-        for (Methode m : mdlist){
-            methodes.add(m);
+        db.getConnection();
+        ResultSet rs;
+        String sql="Select libelle_methode From methode_culture";
+
+        try {
+            db.initPrepar(sql);
+            rs=db.executeSelect();
+            while (rs.next()){
+                combo_methode.getItems().add(rs.getString(1));
+            }
+        }catch(Exception e){
+            e.printStackTrace();
         }
-        combo_methode.setItems(methodes);
     }
 
     @FXML
@@ -285,6 +329,15 @@ public class dashbord implements Initializable {
         } else {
             Notification.NotifError("Erreur", "Veuillez saisir tous les champs");
         }
+    }
 
+    public void loadPlanteur()
+    {
+        ObservableList<Planteur> planteurs = FXCollections.observableArrayList();
+        List<Planteur> planteurList =planteurM.get();
+        for (Planteur p : planteurList){
+            planteurs.add(p);
+        }
+        tableView.setItems(planteurs);
     }
 }

@@ -16,7 +16,7 @@ public class DB {
 
 
     public void getConnection (){
-        String url = "jdbc:oracle:thin:@localhost:1522:orcle";
+        String url = "jdbc:oracle:oci:@localhost:1522:orcle";
         String user ="concours";
         String password = "concours";
         try {

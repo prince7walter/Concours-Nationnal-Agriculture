@@ -21,7 +21,7 @@ public class CultureTypeManager {
             ResultSet rs = db.executeSelect();
             while (rs.next()){
                 CultureType cl = new CultureType();
-                cl.setLibelleC(rs.getString(1));
+                cl.setLibelleC(rs.getNString(1));
 
                 cultureTypes.add(cl);
             }

@@ -557,3 +557,13 @@ String sql ="SELECT * FROM users";
         @FXML private HBox box_salaire;
         @FXML private HBox box_age;
         @FXML private HBox box_papier;
+
+       private void addPieceType()
+           {
+               ObservableList<PieceType> pieceTypes = FXCollections.observableArrayList();
+               List<PieceType> pclist = pieceTypeM.get();
+               for (PieceType p : pclist){
+                   pieceTypes.add(p);
+               }
+               combo_piece.setItems(pieceTypes);
+           }

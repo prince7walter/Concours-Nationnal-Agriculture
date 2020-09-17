@@ -197,7 +197,7 @@
                                                                </HBox>
                                                                <HBox fx:id="box_typPc" focusTraversable="true" layoutX="51.0" layoutY="217.0" prefHeight="36.0" prefWidth="230.0">
                                                                    <children>
-                                                   <ComboBox fx:id="combo_diplome" onAction="#addDiplType" prefHeight="36.0" prefWidth="230.0" promptText="Type du Dipôme" style="-fx-border-width: 0;" />
+                                                   <ComboBox fx:id="combo_diplome" prefHeight="36.0" prefWidth="230.0" promptText="Type du Dipôme" style="-fx-border-width: 0;" />
                                                                    </children>
                                                                    <styleClass>
                                                                        <String fx:value="box-light" />
@@ -275,7 +275,7 @@
                                                               </HBox>
                                                               <HBox fx:id="box_methode" focusTraversable="true" layoutX="53.0" layoutY="421.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
-                                                   <ComboBox fx:id="combo_culture" onAction="#addCulture" prefHeight="30.0" prefWidth="220.0" promptText="Type de Culture" style="-fx-border-width: 0;" />
+                                                   <ComboBox fx:id="combo_culture" prefHeight="30.0" prefWidth="220.0" promptText="Type de Culture" style="-fx-border-width: 0;" />
                                                                  </children>
                                                                  <styleClass>
                                                                     <String fx:value="box-light" />
@@ -287,7 +287,7 @@
                                                               </HBox>
                                                               <HBox fx:id="box_annee" focusTraversable="true" layoutX="366.0" layoutY="421.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
-                                                   <ComboBox fx:id="combo_methode" onAction="#addMethode" prefHeight="30.0" prefWidth="220.0" promptText="Méthode culture" style="-fx-border-width: 0;" />
+                                                   <ComboBox fx:id="combo_methode" prefHeight="30.0" prefWidth="220.0" promptText="Méthode culture" style="-fx-border-width: 0;" />
                                                                  </children>
                                                                  <styleClass>
                                                                     <String fx:value="box-light" />
@@ -321,7 +321,7 @@
                                                                </Label>
                                              <HBox fx:id="box_typPc1" focusTraversable="true" layoutX="51.0" layoutY="284.0" prefHeight="36.0" prefWidth="230.0">
                                                 <children>
-                                                   <ComboBox fx:id="combo_piece" onAction="#addPieceType" prefHeight="36.0" prefWidth="230.0" promptText="Type de Pièce" style="-fx-border-width: 0;" />
+                                                   <ComboBox fx:id="combo_piece" prefHeight="36.0" prefWidth="230.0" promptText="Type de Pièce" style="-fx-border-width: 0;" />
                                                 </children>
                                                 <styleClass>
                                                    <String fx:value="box-light" />

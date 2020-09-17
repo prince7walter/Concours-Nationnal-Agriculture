@@ -11,7 +11,7 @@ public class PieceTypeManager {
 
     private DB db = new DB();
 
-    public List<PieceType> get() {
+    public String get() {
         String sql = "Select libelle_type_piece From type_piece";
         List<PieceType> pieces = new ArrayList<>();
         try {
@@ -21,13 +21,15 @@ public class PieceTypeManager {
             while (rs.next()) {
                 PieceType pc = new PieceType();
                 pc.setLibelleP(rs.getString(1));
-
                 pieces.add(pc);
+                System.out.println(pc);
             }
         } catch (
                 SQLException throwables) {
             throwables.printStackTrace();
         }
-        return pieces;
+        System.out.println(pieces.get(1));
+        return pieces.toString();
+
     }
 }
