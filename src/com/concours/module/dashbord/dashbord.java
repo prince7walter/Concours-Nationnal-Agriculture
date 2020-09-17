@@ -1,13 +1,10 @@
 package com.concours.module.dashbord;
 
-import animatefx.animation.Flash;
+
 import animatefx.animation.Pulse;
-import animatefx.animation.SlideInLeft;
 import com.concours.database.DB;
-import com.concours.entity.Planteur;
-import com.concours.entity.PlanteurManager;
+import com.concours.entity.*;
 import com.concours.tools.Notification;
-import com.concours.tools.Outils;
 import javafx.animation.RotateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -15,28 +12,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
-import javafx.scene.chart.AreaChart;
-import javafx.scene.chart.PieChart;
-import javafx.scene.chart.XYChart;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
-import javafx.stage.Window;
 import javafx.util.Duration;
 
 import java.io.File;
 import java.net.URL;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class dashbord implements Initializable {
-
-    final ObservableList options= FXCollections.observableArrayList();
 
     @FXML private StackPane Stack;
 
@@ -82,8 +70,16 @@ public class dashbord implements Initializable {
 
 
 
-    Planteur planteur;
-    PlanteurManager planteurM;
+    private Planteur planteur;
+    private PlanteurManager planteurM = new PlanteurManager();
+    private DiplomeType diplomeEntite;
+    private DiplomeTypeManger diplomeM = new DiplomeTypeManger();
+    private PieceType pieceType;
+    private PieceTypeManager pieceTypeM = new PieceTypeManager();
+    private CultureType cultureType;
+    private CultureTypeManager cultureTypeM = new CultureTypeManager();
+    private Methode methodeEntite;
+    private MethodeManager methodeM = new MethodeManager();
 
     private RotateTransition rotateTransition = new RotateTransition();
 
@@ -103,13 +99,8 @@ public class dashbord implements Initializable {
         img.setEditable(false); imgPc.setEditable(false); certificat.setEditable(false); diplome.setEditable(false); emplCert.setEditable(false);
         imgPlt.setEditable(false);
 
+        addPieceType(); addDiplType(); addCulture(); addMethode();
 
-
-        //matriculeView.setCellValueFactory(new PropertyValueFactory<>("matricule"));
-        //nomView.setCellValueFactory(new PropertyValueFactory<>("matricule"));
-
-
-        // setupListeners();
     }
 
     private void addEffect(Node node){
@@ -131,44 +122,48 @@ public class dashbord implements Initializable {
 
     DB db = new DB();
     @FXML
-    private void addPieceType(ActionEvent event)
+    private void addPieceType()
     {
-        String sql="Select libelle_piece From type_piece";
-        try {
-            db.initPrepar(sql);
-
-            ResultSet rs = db.executeSelect();
-            if(rs.next()){
-                options.add(rs.getString(1));
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+        ObservableList<PieceType> pieceTypes = FXCollections.observableArrayList();
+        List<PieceType> pclist = pieceTypeM.get();
+        for (PieceType p : pclist){
+            pieceTypes.add(p);
         }
-
+        combo_piece.setItems(pieceTypes);
     }
 
     @FXML
     private void addDiplType()
     {
-        String sql="Select libelle_diplome From type_diplome";
-        try {
-            db.initPrepar(sql);
-
-            ResultSet rs = db.executeSelect();
-            if(rs.next()){
-                options.add(rs.getString(1));
-            }
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
+       ObservableList<DiplomeType> diplomeTypes = FXCollections.observableArrayList();
+        List<DiplomeType> dplist = diplomeM.get();
+        for (DiplomeType d : dplist){
+            diplomeTypes.add(d);
         }
-
+        combo_diplome.setItems(diplomeTypes);
     }
 
     @FXML
-    private void addCulture(){}
+    private void addCulture()
+    {
+        ObservableList<CultureType> cultureTypes = FXCollections.observableArrayList();
+        List<CultureType> cllist = cultureTypeM.get();
+        for (CultureType c : cllist){
+            cultureTypes.add(c);
+        }
+        combo_culture.setItems(cultureTypes);
+    }
 
     @FXML
-    private void addMethode(){}
+    private void addMethode()
+    {
+        ObservableList<Methode> methodes = FXCollections.observableArrayList();
+        List<Methode> mdlist = methodeM.get();
+        for (Methode m : mdlist){
+            methodes.add(m);
+        }
+        combo_methode.setItems(methodes);
+    }
 
     @FXML
     private void addPhoto(ActionEvent event)
