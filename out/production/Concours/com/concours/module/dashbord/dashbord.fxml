@@ -1,29 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import java.net.URL?>
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ListView?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.StackPane?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
-<?import javafx.scene.text.TextFlow?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <StackPane fx:id="Stack" prefHeight="740.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.concours.module.dashbord.dashbord">
     <stylesheets>
@@ -96,7 +78,7 @@
                                                     <children>
                                                         <AnchorPane prefHeight="485.0" prefWidth="968.0" style="-fx-border-radius: 0;">
                                                            <children>
-                                                               <Label alignment="CENTER" layoutX="303.0" prefHeight="51.0" prefWidth="316.0" style="-fx-text-fill: -text-color;" styleClass="h4" text="Informations du Planteur">
+                                                               <Label alignment="CENTER" layoutX="303.0" prefHeight="39.0" prefWidth="316.0" style="-fx-text-fill: -text-color;" styleClass="h4" text="Informations du Planteur">
                                                                    <VBox.margin>
                                                                        <Insets top="10.0" />
                                                                    </VBox.margin>
@@ -104,7 +86,7 @@
                                                                        <Font size="15.0" />
                                                                    </font>
                                                                </Label>
-                                                               <HBox fx:id="box_nom" focusTraversable="true" layoutX="49.0" layoutY="51.0" prefHeight="36.0" prefWidth="230.0">
+                                                               <HBox fx:id="box_nom" focusTraversable="true" layoutX="49.0" layoutY="39.0" prefHeight="36.0" prefWidth="230.0">
                                                                    <children>
                                                                        <TextField fx:id="nom" prefHeight="36.0" prefWidth="230.0" promptText="Nom" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                                    </children>
@@ -116,7 +98,7 @@
                                                                        <Insets right="10.0" />
                                                                    </padding>
                                                                </HBox>
-                                                                <HBox fx:id="box_prenom" focusTraversable="true" layoutX="356.0" layoutY="51.0" prefHeight="36.0" prefWidth="230.0">
+                                                                <HBox fx:id="box_prenom" focusTraversable="true" layoutX="356.0" layoutY="39.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
                                                                     <TextField fx:id="prenom" prefHeight="36.0" prefWidth="230.0" promptText="Prenom" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                                  </children>
@@ -128,7 +110,7 @@
                                                                     <Insets right="10.0" />
                                                                  </padding>
                                                               </HBox>
-                                                              <HBox fx:id="box_email" focusTraversable="true" layoutX="681.0" layoutY="51.0" prefHeight="36.0" prefWidth="230.0">
+                                                              <HBox fx:id="box_email" focusTraversable="true" layoutX="681.0" layoutY="39.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
                                                                     <TextField fx:id="email" prefHeight="36.0" prefWidth="230.0" promptText="Email" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                                  </children>
@@ -140,7 +122,7 @@
                                                                     <Insets right="10.0" />
                                                                  </padding>
                                                               </HBox>
-                                                              <HBox fx:id="box_dateN" focusTraversable="true" layoutX="49.0" layoutY="110.0" prefHeight="36.0" prefWidth="230.0">
+                                                              <HBox fx:id="box_dateN" focusTraversable="true" layoutX="49.0" layoutY="98.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
                                                    <DatePicker fx:id="dateN" prefHeight="36.0" prefWidth="230.0" promptText="Date de Naissance" style="-fx-border-width: 0;" />
                                                                  </children>
@@ -152,7 +134,7 @@
                                                                     <Insets right="10.0" />
                                                                  </padding>
                                                               </HBox>
-                                                              <HBox fx:id="box_prenom1" focusTraversable="true" layoutX="356.0" layoutY="110.0" prefHeight="36.0" prefWidth="230.0">
+                                                              <HBox fx:id="box_prenom1" focusTraversable="true" layoutX="356.0" layoutY="98.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
                                                                     <TextField fx:id="lieuN" prefHeight="36.0" prefWidth="230.0" promptText="Lieu de Naissance" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                                  </children>
@@ -164,7 +146,7 @@
                                                                     <Insets right="10.0" />
                                                                  </padding>
                                                               </HBox>
-                                                              <HBox fx:id="box_nation" focusTraversable="true" layoutX="681.0" layoutY="110.0" prefHeight="36.0" prefWidth="230.0">
+                                                              <HBox fx:id="box_nation" focusTraversable="true" layoutX="681.0" layoutY="98.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
                                                                     <TextField fx:id="nation" prefHeight="36.0" prefWidth="230.0" promptText="Nationnalité" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                                  </children>
@@ -176,7 +158,7 @@
                                                                     <Insets right="10.0" />
                                                                  </padding>
                                                               </HBox>
-                                                               <HBox fx:id="box_contact" focusTraversable="true" layoutX="51.0" layoutY="170.0" prefHeight="36.0" prefWidth="230.0">
+                                                               <HBox fx:id="box_contact" focusTraversable="true" layoutX="51.0" layoutY="158.0" prefHeight="36.0" prefWidth="230.0">
                                                                    <children>
                                                                        <TextField fx:id="contact" prefHeight="36.0" prefWidth="230.0" promptText="Contact" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                                    </children>
@@ -188,7 +170,7 @@
                                                                        <Insets right="10.0" />
                                                                    </padding>
                                                                </HBox>
-                                                               <HBox fx:id="box_niveau" focusTraversable="true" layoutX="358.0" layoutY="170.0" prefHeight="36.0" prefWidth="230.0">
+                                                               <HBox fx:id="box_niveau" focusTraversable="true" layoutX="358.0" layoutY="158.0" prefHeight="36.0" prefWidth="230.0">
                                                                    <children>
                                                                        <TextField fx:id="niveau" prefHeight="36.0" prefWidth="230.0" promptText="Niveau d'Etude" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                                    </children>
@@ -200,7 +182,7 @@
                                                                        <Insets right="10.0" />
                                                                    </padding>
                                                                </HBox>
-                                                               <HBox fx:id="box_diplome" focusTraversable="true" layoutX="683.0" layoutY="170.0" prefHeight="36.0" prefWidth="230.0">
+                                                               <HBox fx:id="box_diplome" focusTraversable="true" layoutX="683.0" layoutY="158.0" prefHeight="36.0" prefWidth="230.0">
                                                                    <children>
                                                                        <TextField fx:id="img" prefHeight="36.0" prefWidth="176.0" promptText="Ajouter photo" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                    <Button fx:id="add_img" mnemonicParsing="false" onAction="#addPhoto" prefHeight="36.0" prefWidth="66.0" text="Ajouter" />
@@ -213,7 +195,7 @@
                                                                        <Insets right="10.0" />
                                                                    </padding>
                                                                </HBox>
-                                                               <HBox fx:id="box_typPc" focusTraversable="true" layoutX="51.0" layoutY="229.0" prefHeight="36.0" prefWidth="230.0">
+                                                               <HBox fx:id="box_typPc" focusTraversable="true" layoutX="51.0" layoutY="217.0" prefHeight="36.0" prefWidth="230.0">
                                                                    <children>
                                                    <ComboBox fx:id="combo_diplome" onAction="#addDiplType" prefHeight="36.0" prefWidth="230.0" promptText="Type du Dipôme" style="-fx-border-width: 0;" />
                                                                    </children>
@@ -225,7 +207,7 @@
                                                                        <Insets right="10.0" />
                                                                    </padding>
                                                                </HBox>
-                                                               <HBox fx:id="box_numPc" focusTraversable="true" layoutX="358.0" layoutY="231.0" prefHeight="36.0" prefWidth="230.0">
+                                                               <HBox fx:id="box_numPc" focusTraversable="true" layoutX="358.0" layoutY="219.0" prefHeight="36.0" prefWidth="230.0">
                                                                    <children>
                                                                        <TextField fx:id="numDipl" prefHeight="36.0" prefWidth="230.0" promptText="Numéro du diplôme" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                                    </children>
@@ -237,7 +219,7 @@
                                                                        <Insets right="10.0" />
                                                                    </padding>
                                                                </HBox>
-                                                               <HBox fx:id="box_imgPc" focusTraversable="true" layoutX="683.0" layoutY="231.0" prefHeight="36.0" prefWidth="230.0">
+                                                               <HBox fx:id="box_imgPc" focusTraversable="true" layoutX="683.0" layoutY="219.0" prefHeight="36.0" prefWidth="230.0">
                                                                    <children>
                                                                        <TextField fx:id="diplome" prefHeight="36.0" prefWidth="176.0" promptText="Ajouter diplôme" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                    <Button fx:id="add_dipl" mnemonicParsing="false" onAction="#addDiplome" prefHeight="36.0" prefWidth="66.0" text="Ajouter" />
@@ -250,11 +232,11 @@
                                                                        <Insets right="10.0" />
                                                                    </padding>
                                                                </HBox>
-                                                              <Separator layoutX="344.0" layoutY="371.0" prefHeight="16.0" prefWidth="253.0" />
-                                                              <Separator layoutX="344.0" layoutY="334.0" prefHeight="16.0" prefWidth="253.0" />
-                                                              <Separator layoutX="344.0" layoutY="-1.0" prefHeight="16.0" prefWidth="253.0" />
-                                                              <Separator layoutX="344.0" layoutY="35.0" prefHeight="16.0" prefWidth="253.0" />
-                                                              <HBox fx:id="box_localisation" focusTraversable="true" layoutX="54.0" layoutY="387.0" prefHeight="36.0" prefWidth="230.0">
+                                                              <Separator layoutX="344.0" layoutY="346.0" prefHeight="16.0" prefWidth="253.0" />
+                                                              <Separator layoutX="344.0" layoutY="319.0" prefHeight="16.0" prefWidth="253.0" />
+                                                              <Separator layoutX="344.0" layoutY="-3.0" prefHeight="16.0" prefWidth="253.0" />
+                                                              <Separator layoutX="344.0" layoutY="23.0" prefHeight="16.0" prefWidth="253.0" />
+                                                              <HBox fx:id="box_localisation" focusTraversable="true" layoutX="53.0" layoutY="362.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
                                                                     <TextField fx:id="localisation" prefHeight="36.0" prefWidth="230.0" promptText="Localisation" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                                  </children>
@@ -266,7 +248,7 @@
                                                                     <Insets right="10.0" />
                                                                  </padding>
                                                               </HBox>
-                                                              <HBox fx:id="box_superficie" focusTraversable="true" layoutX="367.0" layoutY="387.0" prefHeight="36.0" prefWidth="230.0">
+                                                              <HBox fx:id="box_superficie" focusTraversable="true" layoutX="366.0" layoutY="362.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
                                                                     <TextField fx:id="superficie" prefHeight="36.0" prefWidth="230.0" promptText="Superficie" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                                  </children>
@@ -278,9 +260,9 @@
                                                                     <Insets right="10.0" />
                                                                  </padding>
                                                               </HBox>
-                                                              <HBox fx:id="box_culture" focusTraversable="true" layoutX="681.0" layoutY="387.0" prefHeight="36.0" prefWidth="230.0">
+                                                              <HBox fx:id="box_culture" focusTraversable="true" layoutX="680.0" layoutY="362.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
-                                                                    <TextField fx:id="img_plt" prefHeight="36.0" prefWidth="170.0" promptText="Photo de la Plantation" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
+                                                                    <TextField fx:id="imgPlt" prefHeight="36.0" prefWidth="170.0" promptText="Photo de la Plantation" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                    <Button fx:id="add_plant" mnemonicParsing="false" onAction="#addPlant" prefHeight="36.0" prefWidth="66.0" text="Ajouter" />
                                                                  </children>
                                                                  <styleClass>
@@ -291,9 +273,9 @@
                                                                     <Insets right="10.0" />
                                                                  </padding>
                                                               </HBox>
-                                                              <HBox fx:id="box_methode" focusTraversable="true" layoutX="54.0" layoutY="446.0" prefHeight="36.0" prefWidth="230.0">
+                                                              <HBox fx:id="box_methode" focusTraversable="true" layoutX="53.0" layoutY="421.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
-                                                   <ComboBox fx:id="combo_culture" prefHeight="30.0" prefWidth="220.0" promptText="Type de Culture" style="-fx-border-width: 0;" />
+                                                   <ComboBox fx:id="combo_culture" onAction="#addCulture" prefHeight="30.0" prefWidth="220.0" promptText="Type de Culture" style="-fx-border-width: 0;" />
                                                                  </children>
                                                                  <styleClass>
                                                                     <String fx:value="box-light" />
@@ -303,9 +285,9 @@
                                                                     <Insets right="10.0" />
                                                                  </padding>
                                                               </HBox>
-                                                              <HBox fx:id="box_annee" focusTraversable="true" layoutX="367.0" layoutY="446.0" prefHeight="36.0" prefWidth="230.0">
+                                                              <HBox fx:id="box_annee" focusTraversable="true" layoutX="366.0" layoutY="421.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
-                                                   <ComboBox fx:id="combo_methode" prefHeight="30.0" prefWidth="220.0" promptText="Méthode culture" style="-fx-border-width: 0;" />
+                                                   <ComboBox fx:id="combo_methode" onAction="#addMethode" prefHeight="30.0" prefWidth="220.0" promptText="Méthode culture" style="-fx-border-width: 0;" />
                                                                  </children>
                                                                  <styleClass>
                                                                     <String fx:value="box-light" />
@@ -315,7 +297,7 @@
                                                                     <Insets right="10.0" />
                                                                  </padding>
                                                               </HBox>
-                                                              <HBox fx:id="box_certificat" focusTraversable="true" layoutX="683.0" layoutY="446.0" prefHeight="36.0" prefWidth="230.0">
+                                                              <HBox fx:id="box_certificat" focusTraversable="true" layoutX="682.0" layoutY="421.0" prefHeight="36.0" prefWidth="230.0">
                                                                  <children>
                                                                     <TextField fx:id="certificat" prefHeight="36.0" prefWidth="170.0" promptText="Ajouter Certificat" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                    <Button fx:id="add_certificat" mnemonicParsing="false" onAction="#addCertificat" prefHeight="36.0" prefWidth="66.0" text="Ajouter" />
@@ -329,7 +311,7 @@
                                                                  </padding>
                                                               </HBox>
 
-                                                               <Label alignment="CENTER" layoutX="326.0" layoutY="336.0" prefHeight="51.0" prefWidth="289.0" style="-fx-text-fill: -text-color;" styleClass="h4" text="Informations de la Plantation">
+                                                               <Label alignment="CENTER" layoutX="325.0" layoutY="315.0" prefHeight="51.0" prefWidth="289.0" style="-fx-text-fill: -text-color;" styleClass="h4" text="Informations de la Plantation">
                                                                    <VBox.margin>
                                                                        <Insets top="10.0" />
                                                                    </VBox.margin>
@@ -337,7 +319,7 @@
                                                                        <Font size="15.0" />
                                                                    </font>
                                                                </Label>
-                                             <HBox fx:id="box_typPc1" focusTraversable="true" layoutX="51.0" layoutY="296.0" prefHeight="36.0" prefWidth="230.0">
+                                             <HBox fx:id="box_typPc1" focusTraversable="true" layoutX="51.0" layoutY="284.0" prefHeight="36.0" prefWidth="230.0">
                                                 <children>
                                                    <ComboBox fx:id="combo_piece" onAction="#addPieceType" prefHeight="36.0" prefWidth="230.0" promptText="Type de Pièce" style="-fx-border-width: 0;" />
                                                 </children>
@@ -349,7 +331,7 @@
                                                    <Insets right="10.0" />
                                                 </padding>
                                              </HBox>
-                                             <HBox fx:id="box_numPc1" focusTraversable="true" layoutX="361.0" layoutY="298.0" prefHeight="36.0" prefWidth="230.0">
+                                             <HBox fx:id="box_numPc1" focusTraversable="true" layoutX="361.0" layoutY="284.0" prefHeight="36.0" prefWidth="230.0">
                                                 <children>
                                                    <TextField fx:id="numPc" prefHeight="36.0" prefWidth="230.0" promptText="Numéro de pièce" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                 </children>
@@ -361,7 +343,7 @@
                                                    <Insets right="10.0" />
                                                 </padding>
                                              </HBox>
-                                             <HBox fx:id="box_imgPc1" focusTraversable="true" layoutX="681.0" layoutY="298.0" prefHeight="36.0" prefWidth="230.0">
+                                             <HBox fx:id="box_imgPc1" focusTraversable="true" layoutX="681.0" layoutY="284.0" prefHeight="36.0" prefWidth="230.0">
                                                 <children>
                                                    <TextField fx:id="imgPc" prefHeight="36.0" prefWidth="176.0" promptText="Ajouter pièce" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                    <Button fx:id="add_piece" mnemonicParsing="false" onAction="#addPiece" prefHeight="36.0" prefWidth="66.0" text="Ajouter" />
@@ -376,22 +358,22 @@
                                              </HBox>
                   
                         
-                                                               <Button fx:id="login" defaultButton="true" layoutX="361.0" layoutY="607.0" minHeight="35.0" mnemonicParsing="false" onAction="#enregistrer" prefHeight="35.0" prefWidth="242.0" text="Enregistrer">
+                                                               <Button fx:id="login" defaultButton="true" layoutX="361.0" layoutY="604.0" minHeight="35.0" mnemonicParsing="false" onAction="#enregistrer" prefHeight="35.0" prefWidth="242.0" text="Enregistrer">
                                                                    <styleClass>
                                                                        <String fx:value="btn-large" />
                                                                        <String fx:value="login" />
                                                                    </styleClass>
                                                                </Button>
-                                             <Label alignment="CENTER" layoutX="326.0" layoutY="486.0" prefHeight="51.0" prefWidth="289.0" style="-fx-text-fill: -text-color;" styleClass="h4" text="Informations Employés">
+                                             <Label alignment="CENTER" layoutX="326.0" layoutY="454.0" prefHeight="51.0" prefWidth="289.0" style="-fx-text-fill: -text-color;" styleClass="h4" text="Informations Employés">
                                                 <font>
                                                    <Font size="15.0" />
                                                 </font>
                                              </Label>
-                                             <Separator layoutX="347.0" layoutY="521.0" prefHeight="16.0" prefWidth="253.0" />
+                                             <Separator layoutX="347.0" layoutY="459.0" prefHeight="16.0" prefWidth="253.0" />
                                              <Separator layoutX="347.0" layoutY="486.0" prefHeight="16.0" prefWidth="253.0" />
-                                             <HBox fx:id="box_localisation1" focusTraversable="true" layoutX="53.0" layoutY="529.0" prefHeight="36.0" prefWidth="230.0">
+                                             <HBox fx:id="box_localisation1" focusTraversable="true" layoutX="52.0" layoutY="502.0" prefHeight="36.0" prefWidth="230.0">
                                                 <children>
-                                                   <TextField fx:id="localisation1" prefHeight="36.0" prefWidth="230.0" promptText="Localisation" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
+                                                   <TextField fx:id="employe" prefHeight="36.0" prefWidth="230.0" promptText="Nombre d'Emplyés" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                 </children>
                                                 <styleClass>
                                                    <String fx:value="box-light" />
@@ -401,9 +383,9 @@
                                                    <Insets right="10.0" />
                                                 </padding>
                                              </HBox>
-                                             <HBox fx:id="box_superficie1" focusTraversable="true" layoutX="366.0" layoutY="529.0" prefHeight="36.0" prefWidth="230.0">
+                                             <HBox fx:id="box_superficie1" focusTraversable="true" layoutX="365.0" layoutY="502.0" prefHeight="36.0" prefWidth="230.0">
                                                 <children>
-                                                   <TextField fx:id="superficie1" prefHeight="36.0" prefWidth="230.0" promptText="Superficie" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
+                                                   <TextField fx:id="employeFem" prefHeight="36.0" prefWidth="230.0" promptText="Nombre de femmes Employées" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                 </children>
                                                 <styleClass>
                                                    <String fx:value="box-light" />
@@ -413,10 +395,10 @@
                                                    <Insets right="10.0" />
                                                 </padding>
                                              </HBox>
-                                             <HBox fx:id="box_culture1" focusTraversable="true" layoutX="680.0" layoutY="529.0" prefHeight="36.0" prefWidth="230.0">
+                                             <HBox fx:id="box_culture1" focusTraversable="true" layoutX="679.0" layoutY="502.0" prefHeight="36.0" prefWidth="230.0">
                                                 <children>
-                                                   <TextField fx:id="img_plt1" prefHeight="36.0" prefWidth="170.0" promptText="Photo de la Plantation" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
-                                                   <Button fx:id="add_plant1" mnemonicParsing="false" onAction="#addPlant" prefHeight="36.0" prefWidth="66.0" text="Ajouter" />
+                                                   <TextField fx:id="emplCert" prefHeight="36.0" prefWidth="170.0" promptText="Certification de Déclaration" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
+                                                   <Button fx:id="add_decl" mnemonicParsing="false" onAction="#addDecl" prefHeight="36.0" prefWidth="66.0" text="Ajouter" />
                                                 </children>
                                                 <styleClass>
                                                    <String fx:value="box-light" />
@@ -426,10 +408,7 @@
                                                    <Insets right="10.0" />
                                                 </padding>
                                              </HBox>
-                                             <HBox fx:id="box_methode1" focusTraversable="true" layoutX="53.0" layoutY="588.0" prefHeight="36.0" prefWidth="230.0">
-                                                <children>
-                                                   <ComboBox fx:id="combo_culture1" prefHeight="30.0" prefWidth="220.0" promptText="Type de Culture" style="-fx-border-width: 0;" />
-                                                </children>
+                                             <HBox fx:id="box_methode1" focusTraversable="true" layoutX="52.0" layoutY="561.0" prefHeight="36.0" prefWidth="230.0">
                                                 <styleClass>
                                                    <String fx:value="box-light" />
                                                    <String fx:value="rounded" />
@@ -437,11 +416,11 @@
                                                 <padding>
                                                    <Insets right="10.0" />
                                                 </padding>
-                                             </HBox>
-                                             <HBox fx:id="box_annee1" focusTraversable="true" layoutX="366.0" layoutY="588.0" prefHeight="36.0" prefWidth="230.0">
                                                 <children>
-                                                   <ComboBox fx:id="combo_methode1" prefHeight="30.0" prefWidth="220.0" promptText="Méthode culture" style="-fx-border-width: 0;" />
+                                                   <TextField fx:id="salaire" prefHeight="36.0" prefWidth="220.0" promptText="Salaire moyen" style="-fx-border-width: 0;" />
                                                 </children>
+                                             </HBox>
+                                             <HBox fx:id="box_annee1" focusTraversable="true" layoutX="365.0" layoutY="561.0" prefHeight="36.0" prefWidth="230.0">
                                                 <styleClass>
                                                    <String fx:value="box-light" />
                                                    <String fx:value="rounded" />
@@ -449,11 +428,13 @@
                                                 <padding>
                                                    <Insets right="10.0" />
                                                 </padding>
-                                             </HBox>
-                                             <HBox fx:id="box_certificat1" focusTraversable="true" layoutX="682.0" layoutY="588.0" prefHeight="36.0" prefWidth="230.0">
                                                 <children>
-                                                   <TextField fx:id="certificat1" prefHeight="36.0" prefWidth="170.0" promptText="Ajouter Certificat" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
-                                                   <Button fx:id="add_certificat1" mnemonicParsing="false" onAction="#addCertificat" prefHeight="36.0" prefWidth="66.0" text="Ajouter" />
+                                                   <TextField fx:id="age" prefHeight="36.0" prefWidth="220.0" promptText="Age mininum" style="-fx-border-width: 0;" />
+                                                </children>
+                                             </HBox>
+                                             <HBox fx:id="box_certificat1" focusTraversable="true" layoutX="681.0" layoutY="561.0" prefHeight="36.0" prefWidth="230.0">
+                                                <children>
+                                                   <TextField fx:id="commentaire" prefHeight="36.0" prefWidth="230.0" promptText="Commentaire" style="-fx-border-width: 0;" styleClass="ClearableSkin" />
                                                 </children>
                                                 <styleClass>
                                                    <String fx:value="box-light" />
@@ -484,7 +465,7 @@
                      <children>
                         <ScrollPane prefHeight="645.0" prefWidth="1004.0">
                            <content>
-                              <TableView fx:id="view_tab" prefHeight="460.0" prefWidth="983.0">
+                              <TableView fx:id="view_tab" prefHeight="460.0" prefWidth="995.0">
                                 <columns>
                                   <TableColumn fx:id="matriculeView" prefWidth="84.0" text="MATRICULE" />
                                   <TableColumn fx:id="nomview" prefWidth="97.0" text="NOM" />

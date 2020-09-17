@@ -7,13 +7,13 @@ public class PlanteurManager {
 
     public int add(Planteur planteur) {
         String sql1 = "INSERT INTO CONCOURS.PLANTEUR VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        String sql2 = "INSERT INTO CONCOURS.PLANTATION VALUES (?, ?, ?, ?, ?, ?, ?)";
+        String sql2 = "INSERT INTO CONCOURS.PLANTATION VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
       //  String sql3 = "INSERT INTO CONCOURS.EMPLOYE VALUES (?, ?, ?, ?, ?, ?, ?)";
       //  String sql4 = "INSERT INTO CONCOURS.FICHIER VALUES (?, ?, ?, ?)";
         int ok = 0 ;
         try {
             db.initPrepar(sql1);
-            db.getPstm().setString(1, planteur.getMatricule());
+            db.getPstm().setString(1, "PLTR"+planteur.getDateN());
             db.getPstm().setString(2, planteur.getNom());
             db.getPstm().setString(3, planteur.getPrenom());
             db.getPstm().setString(4, planteur.getEmail());
@@ -22,8 +22,8 @@ public class PlanteurManager {
             db.getPstm().setString(7, planteur.getNation());
             db.getPstm().setString(8, planteur.getContact());
             db.getPstm().setString(9, planteur.getNiveau());
-            db.getPstm().setString(10, planteur.getTypPc());
-            db.getPstm().setString(11, planteur.getNumPc());
+            db.getPstm().setString(10, planteur.getTypePiec());
+            db.getPstm().setString(11, planteur.getImg());
 
             ok = db.executeMaj();
         } catch (Exception ex){
@@ -32,13 +32,14 @@ public class PlanteurManager {
         int fx =0;
         try {
             db.initPrepar(sql2);
-            db.getPstm().setString(1, planteur.getDateN());
-            db.getPstm().setString(2, planteur.getMatricule());
-            db.getPstm().setString(3, planteur.getCulture());
-            db.getPstm().setString(4, planteur.getLocalisation());
-            db.getPstm().setString(5, planteur.getSuperficie());
-            db.getPstm().setString(6, planteur.getMethode());
-            db.getPstm().setString(7, planteur.getAnnee());
+            db.getPstm().setString(1, "PTN"+planteur.getDateN());
+            db.getPstm().setString(2, planteur.getLocalisation());
+            db.getPstm().setString(3, planteur.getSuperficie());
+            db.getPstm().setString(4, planteur.getCertificat());
+            db.getPstm().setString(5, planteur.getImgPlt());
+            db.getPstm().setString(6, "PLTR"+planteur.getDateN());
+            db.getPstm().setString(7, planteur.getCulture());
+            db.getPstm().setString(8, planteur.getMethode());
 
             ok= db.executeMaj();
         } catch (Exception ex){

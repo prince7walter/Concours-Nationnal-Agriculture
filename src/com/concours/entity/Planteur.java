@@ -13,53 +13,43 @@ public class Planteur {
       private String lieuN;
       private String nation;
       private String contact;
-      private String typPc;
+      private String img;
+      private String numDipl;
       private String numPc;
       private String imgPc;
       private String niveau;
+      private String typeDipl;
+      private String typePiec;
       private String diplome;
       private String localisation;
       private String superficie;
       private String culture;
       private String methode;
-      private String annee;
       private String certificat;
       private String employe;
       private String employeFem;
-      private String employeDec;
+      private String imgPlt;
       private String salaire;
       private String age;
-      private String papier;
+      private String emplCert;
 
     public Planteur() {
     }
 
-    public Planteur(String matricule, String nom, String prenom, String email, String dateN, String lieuN, String nation, String contact, String typPc, String numPc, String imgPc, String niveau, String diplome, String localisation, String superficie, String culture, String methode, String annee, String certificat, String employe, String employeFem, String employeDec, String salaire, String age, String papier) {
-        this.matricule = matricule;
-        this.nom = nom;
-        this.prenom = prenom;
-        this.email = email;
-        this.dateN = dateN;
-        this.lieuN = lieuN;
-        this.nation = nation;
-        this.contact = contact;
-        this.typPc = typPc;
-        this.numPc = numPc;
-        this.imgPc = imgPc;
-        this.niveau = niveau;
-        this.diplome = diplome;
-        this.localisation = localisation;
-        this.superficie = superficie;
-        this.culture = culture;
-        this.methode = methode;
-        this.annee = annee;
-        this.certificat = certificat;
-        this.employe = employe;
-        this.employeFem = employeFem;
-        this.employeDec = employeDec;
-        this.salaire = salaire;
-        this.age = age;
-        this.papier = papier;
+    public Planteur(String matricule, String nom, String prenom, String email, String dateN, String lieuN, String nation, String contact, String img, String numDipl, String numPc, String imgPc, String niveau, String typeDipl, String typePiec, String diplome, String localisation, String superficie, String culture, String methode, String certificat, String employe, String employeFem, String imgPlt, String salaire, String age, String emplCert) {
+        this.matricule = matricule; this.nom = nom; this.prenom = prenom; this.email = email; this.dateN = dateN; this.lieuN = lieuN; this.nation = nation;
+        this.contact = contact; this.img=img; this.numDipl = numDipl; this.numPc = numPc; this.imgPc = imgPc; this.niveau = niveau; this.typeDipl = typeDipl;
+        this.typePiec = typePiec; this.diplome = diplome; this.localisation = localisation; this.superficie = superficie; this.culture = culture;
+        this.methode = methode; this.certificat = certificat; this.employe = employe; this.employeFem = employeFem; this.imgPlt = imgPlt;
+        this.salaire = salaire; this.age = age; this.emplCert = emplCert;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
     }
 
     public String getMatricule() {
@@ -126,12 +116,12 @@ public class Planteur {
         this.contact = contact;
     }
 
-    public String getTypPc() {
-        return typPc;
+    public String getNumDipl() {
+        return numDipl;
     }
 
-    public void setTypPc(String typPc) {
-        this.typPc = typPc;
+    public void setNumDipl(String numDipl) {
+        this.numDipl = numDipl;
     }
 
     public String getNumPc() {
@@ -156,6 +146,22 @@ public class Planteur {
 
     public void setNiveau(String niveau) {
         this.niveau = niveau;
+    }
+
+    public String getTypeDipl() {
+        return typeDipl;
+    }
+
+    public void setTypeDipl(String typeDipl) {
+        this.typeDipl = typeDipl;
+    }
+
+    public String getTypePiec() {
+        return typePiec;
+    }
+
+    public void setTypePiec(String typePiec) {
+        this.typePiec = typePiec;
     }
 
     public String getDiplome() {
@@ -198,14 +204,6 @@ public class Planteur {
         this.methode = methode;
     }
 
-    public String getAnnee() {
-        return annee;
-    }
-
-    public void setAnnee(String annee) {
-        this.annee = annee;
-    }
-
     public String getCertificat() {
         return certificat;
     }
@@ -230,12 +228,12 @@ public class Planteur {
         this.employeFem = employeFem;
     }
 
-    public String getEmployeDec() {
-        return employeDec;
+    public String getImgPlt() {
+        return imgPlt;
     }
 
-    public void setEmployeDec(String employeDec) {
-        this.employeDec = employeDec;
+    public void setImgPlt(String imgPlt) {
+        this.imgPlt = imgPlt;
     }
 
     public String getSalaire() {
@@ -254,11 +252,11 @@ public class Planteur {
         this.age = age;
     }
 
-    public String getPapier() {
-        return papier;
+    public String getEmplCert() {
+        return emplCert;
     }
 
-    public void setPapier(String papier) {
-        this.papier = papier;
+    public void setEmplCert(String emplCert) {
+        this.emplCert = emplCert;
     }
 }

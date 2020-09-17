@@ -79,7 +79,7 @@ public class dashbord implements Initializable {
     @FXML private TableColumn<Planteur, String> avisView;
 
 
-    @FXML private Label  error;
+
 
 
     Planteur planteur;
@@ -95,9 +95,10 @@ public class dashbord implements Initializable {
         rotateTransition.setDuration(Duration.seconds(1));
         rotateTransition.setAutoReverse(true);
 
-        addEffect(nom); addEffect(prenom); addEffect(email); addEffect(lieuN); addEffect(nation); addEffect(contact); addEffect(typPc);
-        addEffect(numPc); addEffect(imgPc); addEffect(niveau); addEffect(diplome); addEffect(localisation); addEffect(superficie); addEffect(culture);
-        addEffect(methode); addEffect(annee); addEffect(certificat);
+        addEffect(nom); addEffect(prenom); addEffect(email); addEffect(lieuN); addEffect(nation); addEffect(contact); addEffect(img); addEffect(numDipl);
+        addEffect(numPc); addEffect(imgPc); addEffect(niveau); addEffect(combo_diplome); addEffect(diplome); addEffect(localisation); addEffect(superficie);
+        addEffect(combo_culture); addEffect(combo_methode); addEffect(certificat);addEffect(combo_piece); addEffect(employe); addEffect(employeFem);
+        addEffect(imgPlt); addEffect(salaire); addEffect(age); addEffect(emplCert);
 
         img.setEditable(false); imgPc.setEditable(false); certificat.setEditable(false); diplome.setEditable(false); emplCert.setEditable(false);
         imgPlt.setEditable(false);
@@ -132,6 +133,23 @@ public class dashbord implements Initializable {
     @FXML
     private void addPieceType(ActionEvent event)
     {
+        String sql="Select libelle_piece From type_piece";
+        try {
+            db.initPrepar(sql);
+
+            ResultSet rs = db.executeSelect();
+            if(rs.next()){
+                options.add(rs.getString(1));
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+    }
+
+    @FXML
+    private void addDiplType()
+    {
         String sql="Select libelle_diplome From type_diplome";
         try {
             db.initPrepar(sql);
@@ -145,6 +163,12 @@ public class dashbord implements Initializable {
         }
 
     }
+
+    @FXML
+    private void addCulture(){}
+
+    @FXML
+    private void addMethode(){}
 
     @FXML
     private void addPhoto(ActionEvent event)
@@ -191,32 +215,43 @@ public class dashbord implements Initializable {
         certificat.setText(file.toString());
     }
 
+    @FXML
+    private void addPlant(){
+        FileChooser choose = new FileChooser();
+        choose.setTitle("Choisir une image");
+        Stage stage = (Stage)Stack.getScene().getWindow();
+
+        File file= choose.showOpenDialog(stage);
+        if (!file.toString().isEmpty())
+            imgPlt.setText(file.toString());
+    }
+
+    @FXML
+    private void addDecl(){
+        FileChooser choose = new FileChooser();
+        choose.setTitle("Choisir une image");
+        Stage stage = (Stage)Stack.getScene().getWindow();
+
+        File file= choose.showOpenDialog(stage);
+        if (!file.toString().isEmpty())
+            emplCert.setText(file.toString());
+    }
+
     private boolean validInscription(){
-        return !img.getText().isEmpty() &&
-                !nom.getText().isEmpty() &&
-                !prenom.getText().isEmpty() &&
-                !email.getText().isEmpty() &&
-                !dateN.getEditor().getText().isEmpty() &&
-                !lieuN.getText().isEmpty() &&
-                !nation.getText().isEmpty() &&
-                !contact.getText().isEmpty() &&
-                !niveau.getText().isEmpty() &&
-                !diplome.getText().isEmpty() &&
-                !imgPc.getText().isEmpty() &&
-                !localisation.getText().isEmpty() &&
-                !superficie.getText().isEmpty() &&
-                !culture.getText().isEmpty() &&
-                !methode.getText().isEmpty() &&
-                !annee.getText().isEmpty() &&
-                !certificat.getText().isEmpty();
+        return !img.getText().isEmpty() && !nom.getText().isEmpty() && !prenom.getText().isEmpty() && !email.getText().isEmpty() &&
+                !dateN.getEditor().getText().isEmpty() && !lieuN.getText().isEmpty() && !nation.getText().isEmpty() &&
+                !contact.getText().isEmpty() && !numDipl.getText().isEmpty() && !niveau.getText().isEmpty() && !diplome.getText().isEmpty() &&
+                !imgPc.getText().isEmpty() && !combo_diplome.getEditor().getText().isEmpty() && !combo_piece.getEditor().getText().isEmpty() &&
+                !localisation.getText().isEmpty() && !superficie.getText().isEmpty() && !combo_culture.getEditor().getText().isEmpty() &&
+                !combo_methode.getEditor().getText().isEmpty() && !age.getText().isEmpty() && !salaire.getText().isEmpty() &&
+                !imgPlt.getText().isEmpty() && !certificat.getText().isEmpty() && !employe.getText().isEmpty() &&
+                !numPc.getText().isEmpty() && !employeFem.getText().isEmpty() && !emplCert.getText().isEmpty();
     }
 
     @FXML
     private void enregistrer(ActionEvent event){
         planteur = new Planteur();
         planteurM = new PlanteurManager();
-
-
 
         planteur.setMatricule( "PTL");
         planteur.setNom( nom.getText());
@@ -226,17 +261,26 @@ public class dashbord implements Initializable {
         planteur.setLieuN( lieuN.getText());
         planteur.setNation( nation.getText());
         planteur.setContact( contact.getText());
-        planteur.setNiveau( niveau.getText());
-        planteur.setDiplome( diplome.getText());
-        planteur.setTypPc( typPc.getText());
-        planteur.setNumPc( numPc.getText());
+        planteur.setImg(img.getText());
+        planteur.setNumDipl(numDipl.getText());
+        planteur.setNumPc(numPc.getText());
         planteur.setImgPc( imgPc.getText());
+        planteur.setNiveau( niveau.getText());
+        planteur.setTypeDipl(combo_diplome.getEditor().getText());
+        planteur.setTypePiec(combo_piece.getEditor().getText());
+        planteur.setDiplome( diplome.getText());
         planteur.setLocalisation( localisation.getText());
         planteur.setSuperficie( superficie.getText());
-        planteur.setCulture( culture.getText());
-        planteur.setMethode( methode.getText());
-        planteur.setAnnee( annee.getText());
+        planteur.setCulture(combo_culture.getEditor().getText());
+        planteur.setMethode(combo_methode.getEditor().getText());
         planteur.setCertificat( certificat.getText());
+        planteur.setEmploye( employe.getText());
+        planteur.setEmployeFem( employeFem.getText());
+        planteur.setImgPlt( imgPlt.getText());
+        planteur.setSalaire( salaire.getText());
+        planteur.setAge( age.getText());
+        planteur.setEmplCert( emplCert.getText());
+
 
 
         int ok = planteurM.add(planteur);
