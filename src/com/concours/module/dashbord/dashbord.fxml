@@ -11,7 +11,7 @@
     <stylesheets>
         <URL value="@../../theme/css/material-color.css" />
         <URL value="@../../theme/css/skeleton.css" />
-        <URL value="@../../theme/css/dark.css" />
+        <URL value="@../../theme/css/light.css" />
         <URL value="@../../theme/css/bootstrap.css" />
         <URL value="@../../theme/css/shape.css" />
         <URL value="@../../theme/css/typographic.css" />
@@ -480,26 +480,6 @@
                               </TableView>
                            </content>
                         </ScrollPane>
-                     </children>
-                  </AnchorPane>
-              </content>
-            </Tab>
-            <Tab text="Untitled Tab">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
-                     <children>
-                        <ComboBox layoutX="238.0" layoutY="171.0" prefWidth="150.0" />
-                        <DatePicker layoutX="261.0" layoutY="272.0" />
-                        <MenuButton layoutX="51.0" layoutY="68.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="42.0" text="MenuButton">
-                          <items>
-                            <MenuItem mnemonicParsing="false" text="Action 1">
-                                 <graphic>
-                                    <ListView prefHeight="200.0" prefWidth="200.0" />
-                                 </graphic>
-                              </MenuItem>
-                            <MenuItem mnemonicParsing="false" text="Action 2" />
-                          </items>
-                        </MenuButton>
                      </children>
                   </AnchorPane>
               </content>
