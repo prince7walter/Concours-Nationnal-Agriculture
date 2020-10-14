@@ -13,6 +13,8 @@ public class DB {
     //pour les resultats de requetes de type mise à jour
     private int ok;
 
+    private CallableStatement cs;
+
 
 
     public void getConnection (){
@@ -25,6 +27,21 @@ public class DB {
 
         } catch (Exception ex) {
             ex.printStackTrace();
+        }
+    }
+
+    public void callProcd (String name,String l,String n,String e,String p){
+        String sql ="call {"+name+"}";
+        try {
+            getConnection();
+            cs= cnx.prepareCall(sql);
+            cs.setString(1,l);
+            cs.setString(2,n);
+            cs.setString(3,e);
+            cs.setString(4,p);
+            rs=cs.executeQuery();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
     }
 

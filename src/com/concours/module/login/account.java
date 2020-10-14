@@ -1,25 +1,14 @@
-/*
- * Copyright (C) Gleidson Neves da Silveira
- *
- * This program is free software: you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation, either version 3 of the License, or
- * (at your option) any later version.
- *
- * This program is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- *
- * You should have received a copy of the GNU General Public License
- * along with this program.  If not, see <http://www.gnu.org/licenses/>.
- */
+
 package com.concours.module.login;
 
 import animatefx.animation.Flash;
 import animatefx.animation.Pulse;
 import animatefx.animation.SlideInLeft;
+import com.concours.database.DB;
+import com.concours.global.User;
+import com.concours.global.plugin.UserManager;
 import com.concours.global.util.Mask;
+import com.concours.tools.Notification;
 import com.concours.tools.Outils;
 import com.gn.App;
 import com.gn.GNAvatarView;
@@ -40,10 +29,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-/**
- * @author Gleidson Neves da Silveira | gleidisonmt@gmail.com
- * Create on  22/11/2018
- */
+
 public class account implements Initializable {
 
     @FXML private GNAvatarView avatar;
@@ -67,6 +53,10 @@ public class account implements Initializable {
 
     @FXML private Button register;
 
+    User user = new User();
+    UserManager userM = new UserManager();
+    DB db = new DB();
+
     private RotateTransition rotateTransition = new RotateTransition();
 
     @Override
@@ -89,29 +79,32 @@ public class account implements Initializable {
     }
 
     @FXML
-    private void register() throws Exception {
+    private void register(ActionEvent event) throws Exception {
         Pulse pulse = new Pulse(register);
         pulse.setDelay(Duration.millis(20));
         pulse.play();
 
         if (validEmail() && validFullName() && validFullName() && validUsername() && validPassword()) {
 
-            String user = username.getText();
-            String extension = "properties";
+            String pseudo = username.getText();
+            String fname = fullname.getText();
+            String mail = email.getText();
+            String pass = password.getText();
 
-            File directory = new File("user/");
-            File file = new File("user/" + user + "." + extension);
-
-            if (!directory.exists()) {
-                directory.mkdir();
-                file.createNewFile();
-                setProperties();
-            } else if (!file.exists()) {
-                file.createNewFile();
-                setProperties();
-            } else {
+            user= new User(pseudo,fname,mail,pass);
+            User eUser = userM.getp(pseudo);
+            if (eUser != null) {
                 lbl_error.setVisible(true);
+                Notification.NotifError("Erreur","Pseudo déjà utilisé choisissez un autre !");
+            } else
+            {
+                userM.save(user);
+                //db.callProcd("addusers(?,?,?,?)",pseudo,fname,mail,pass);
+
+                Notification.NotifSucces("Félicitation","Utilisateur ajouté avec Succes");
+                Outils.load(event,"Tableau de bord","/com/concours/module/login/account.fxml");
             }
+
         } else if (!validUsername()){
             lbl_username.setVisible(true);
         } else if (!validFullName()) {

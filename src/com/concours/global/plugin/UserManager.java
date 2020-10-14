@@ -38,23 +38,39 @@ public class UserManager {
         return user;
     }
 
-    public static void save(User user) {
+    public User getp(String login) {
+        User user = null;
+        String sql = "SELECT * FROM utilisateur WHERE login=?";
         try {
-            File file = new File("user/" + user.getUserName() + ".properties");
-            Properties properties = new Properties();
+            db.initPrepar(sql);
+            db.getPstm().setString(1, login);
 
-            FileInputStream inputStream = new FileInputStream(file);
-            properties.load(inputStream);
+            ResultSet rs = db.executeSelect();
+            if (rs.next()) {
+                user = new User();
+                user.setUserName(rs.getString(1));
+            }
 
-            FileOutputStream outputStream = new FileOutputStream(file);
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return user;
+    }
 
-            properties.setProperty("fullName", user.getFullName());
-            properties.setProperty("email", user.getEmail());
-            properties.setProperty("password", user.getPassword());
-            properties.store(outputStream, "Update Section");
-            properties.clear();
-        } catch (IOException e){
-            e.printStackTrace();
+    public void save(User user) {
+        String sql = "INSERT INTO CONCOURS.UTILISATEUR VALUES (NULL, ?,?,?,?,?)";
+        int ok = 0;
+        try {
+            db.initPrepar(sql);
+            db.getPstm().setString(1, user.getUserName());
+            db.getPstm().setString(2, user.getFullName());
+            db.getPstm().setString(3, "-");
+            db.getPstm().setString(4, user.getEmail());
+            db.getPstm().setString(5, user.getPassword());
+
+            ok = db.executeMaj();
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 
