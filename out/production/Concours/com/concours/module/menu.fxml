@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<StackPane prefHeight="601.0" prefWidth="1204.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.concours.module.menu">
+    <stylesheets>
+        <URL value="@../theme/css/material-color.css" />
+        <URL value="@../theme/css/skeleton.css" />
+        <URL value="@../theme/css/dark.css" />
+        <URL value="@../theme/css/bootstrap.css" />
+        <URL value="@../theme/css/shape.css" />
+        <URL value="@../theme/css/typographic.css" />
+        <URL value="@../theme/css/helpers.css" />
+        <URL value="@../theme/css/master.css" />
+        <URL value="@../theme/css/login.css" />
+    </stylesheets>
+    <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0">
+               <children>
+                  <VBox prefHeight="601.0" prefWidth="197.0">
+                     <children>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                        <Button mnemonicParsing="false" onAction="#affiche1" prefHeight="46.0" prefWidth="200.0" text="Gestion des Candidats" />
+                     </children>
+                  </VBox>
+               </children></AnchorPane>
+            <AnchorPane prefHeight="601.0" prefWidth="1011.0" />
+         </children>
+      </HBox>
+   </children>
+</StackPane>

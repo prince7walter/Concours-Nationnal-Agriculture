@@ -42,7 +42,7 @@ public class PlanteurManager {
             db.getPstm().setString(2, planteur.getLocalisation());
             db.getPstm().setString(3, planteur.getSuperficie());
             db.getPstm().setString(4, planteur.getCertificat());
-            db.getPstm().setString(5, planteur.getImgPlt());
+            db.getPstm().setString(5, planteur.gettonnage());
             db.getPstm().setString(6, "PLTR"+planteur.getDateN());
             db.getPstm().setInt(7, planteur.getCulture());
             db.getPstm().setInt(8, planteur.getMethode());

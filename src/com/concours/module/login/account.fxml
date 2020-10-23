@@ -37,7 +37,7 @@
                            <children>
                               <GNAvatarView fx:id="avatar" strokeWidth="0.0" type="CIRCLE">
                                  <image>
-                                    <Image url="@../media/logo-mini.png" />
+                                    <Image url="@../media/logo.png" />
                                  </image>
                                  <effect>
                                     <DropShadow color="#00000035" />
@@ -139,7 +139,7 @@
                   </HBox>
                </children>
             </FlowPane>
-            <Hyperlink alignment="CENTER_RIGHT" contentDisplay="RIGHT" onAction="#back" text="Return">
+            <Hyperlink alignment="CENTER_RIGHT" contentDisplay="RIGHT" onAction="#back" text="Retour">
                <graphic>
                   <SVGPath content="M16.01 11H4v2h12.01v3L20 12l-3.99-4z" />
                </graphic>

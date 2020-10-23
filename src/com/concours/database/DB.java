@@ -30,8 +30,8 @@ public class DB {
         }
     }
 
-    public void callProcd (String name,String l,String n,String e,String p){
-        String sql ="call {"+name+"}";
+    public void callProcd (String l,String n,String e,String p){
+        String sql ="call addusers(?,?,?,?)";
         try {
             getConnection();
             cs= cnx.prepareCall(sql);
@@ -39,7 +39,7 @@ public class DB {
             cs.setString(2,n);
             cs.setString(3,e);
             cs.setString(4,p);
-            rs=cs.executeQuery();
+            cs.executeUpdate();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }

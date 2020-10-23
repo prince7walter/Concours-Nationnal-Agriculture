@@ -98,8 +98,8 @@ public class account implements Initializable {
                 Notification.NotifError("Erreur","Pseudo déjà utilisé choisissez un autre !");
             } else
             {
-                userM.save(user);
-                //db.callProcd("addusers(?,?,?,?)",pseudo,fname,mail,pass);
+                //userM.save(user);
+                db.callProcd(pseudo,fname,mail,pass);
 
                 Notification.NotifSucces("Félicitation","Utilisateur ajouté avec Succes");
                 Outils.load(event,"Tableau de bord","/com/concours/module/login/account.fxml");

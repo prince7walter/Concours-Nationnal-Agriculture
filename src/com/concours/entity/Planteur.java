@@ -28,7 +28,7 @@ public class Planteur {
       private String certificat;
       private String employe;
       private String employeFem;
-      private String imgPlt;
+      private String tonnage;
       private String salaire;
       private String age;
       private String emplCert;
@@ -36,11 +36,11 @@ public class Planteur {
     public Planteur() {
     }
 
-    public Planteur(String matricule, String nom, String prenom, String email, String dateN, String lieuN, String nation, String contact, String img, String numDipl, String numPc, String imgPc, String niveau, int typeDipl, int typePiec, String diplome, String localisation, String superficie, int culture, int methode, String certificat, String employe, String employeFem, String imgPlt, String salaire, String age, String emplCert) {
+    public Planteur(String matricule, String nom, String prenom, String email, String dateN, String lieuN, String nation, String contact, String img, String numDipl, String numPc, String imgPc, String niveau, int typeDipl, int typePiec, String diplome, String localisation, String superficie, int culture, int methode, String certificat, String employe, String employeFem, String tonnage, String salaire, String age, String emplCert) {
         this.matricule = matricule; this.nom = nom; this.prenom = prenom; this.email = email; this.dateN = dateN; this.lieuN = lieuN; this.nation = nation;
         this.contact = contact; this.img=img; this.numDipl = numDipl; this.numPc = numPc; this.imgPc = imgPc; this.niveau = niveau; this.typeDipl = typeDipl;
         this.typePiec = typePiec; this.diplome = diplome; this.localisation = localisation; this.superficie = superficie; this.culture = culture;
-        this.methode = methode; this.certificat = certificat; this.employe = employe; this.employeFem = employeFem; this.imgPlt = imgPlt;
+        this.methode = methode; this.certificat = certificat; this.employe = employe; this.employeFem = employeFem; this.tonnage = tonnage;
         this.salaire = salaire; this.age = age; this.emplCert = emplCert;
     }
 
@@ -228,12 +228,12 @@ public class Planteur {
         this.employeFem = employeFem;
     }
 
-    public String getImgPlt() {
-        return imgPlt;
+    public String gettonnage() {
+        return tonnage;
     }
 
-    public void setImgPlt(String imgPlt) {
-        this.imgPlt = imgPlt;
+    public void settonnage(String tonnage) {
+        this.tonnage = tonnage;
     }
 
     public String getSalaire() {
@@ -286,7 +286,7 @@ public class Planteur {
                 ", certificat='" + certificat + '\'' +
                 ", employe='" + employe + '\'' +
                 ", employeFem='" + employeFem + '\'' +
-                ", imgPlt='" + imgPlt + '\'' +
+                ", tonnage='" + tonnage + '\'' +
                 ", salaire='" + salaire + '\'' +
                 ", age='" + age + '\'' +
                 ", emplCert='" + emplCert + '\'' +
