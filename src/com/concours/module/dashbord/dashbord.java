@@ -17,6 +17,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.stage.FileChooser;
@@ -34,8 +35,10 @@ import java.util.ResourceBundle;
 
 public class dashbord implements Initializable {
 
+    //Parent
     @FXML private StackPane Stack;
 
+    //variable inscription
     @FXML private TextField img;
     @FXML private TextField nom;
     @FXML private TextField prenom;
@@ -63,6 +66,7 @@ public class dashbord implements Initializable {
     @FXML private TextField age;
     @FXML private TextField emplCert;
 
+    //Variable des listView
     @FXML private TableView<planteurList> plantView;
     @FXML private TableColumn<planteurList, String> matriculeView;
     @FXML private TableColumn<planteurList, String> nomView;
@@ -73,6 +77,29 @@ public class dashbord implements Initializable {
     @FXML private TableColumn<planteurList, String> cultureView;
     @FXML private TableColumn<planteurList, String> tonnageView;
     @FXML private TableColumn<planteurList, String> avisView;
+    //Variable affichage
+    @FXML private TextField email1;
+    @FXML private TextField lieuN1;
+    @FXML private TextField nation1;
+    @FXML private TextField contact1;
+    @FXML private TextField niveau1;
+    @FXML private TextField diplome1;
+    @FXML private TextField numDipl1;
+    @FXML private TextField methode1;
+    @FXML private TextField piece1;
+    @FXML private TextField numPc1;
+    @FXML private TextField employe1;
+    @FXML private TextField employeFem1;
+    @FXML private TextField salaire1;
+    @FXML private TextField age1;
+    @FXML private TextField diplomeRoute1;
+    @FXML private TextField certificat1;
+    @FXML private TextField imgPc1;
+    @FXML private TextField emplCert1;
+    @FXML private ImageView photo1;
+    @FXML private Button avis1;
+    @FXML private Button avis2;
+
 
     @FXML private DatePicker dateViste;
     @FXML private ComboBox combo_candidat;
@@ -82,7 +109,7 @@ public class dashbord implements Initializable {
 
 
 
-
+    //Entités
     private Planteur planteur;
     private PlanteurManager planteurM = new PlanteurManager();
     private planteurList planteurList;
@@ -111,23 +138,35 @@ public class dashbord implements Initializable {
         addEffect(combo_culture); addEffect(combo_methode); addEffect(certificat);addEffect(combo_piece); addEffect(employe); addEffect(employeFem);
         addEffect(tonnage); addEffect(salaire); addEffect(age); addEffect(emplCert);
 
-        img.setEditable(false); imgPc.setEditable(false); certificat.setEditable(false); diplome.setEditable(false); emplCert.setEditable(false);
+        falseEditable();
 
+        addPieceType(); addDiplType(); addCulture(); addMethode();
 
-        addPieceType();
-        addDiplType(); addCulture(); addMethode();
-
+        //listview element add
         matriculeView.setCellValueFactory(new PropertyValueFactory<>("matricule"));
         nomView.setCellValueFactory(new PropertyValueFactory<>("nom"));
         prenomView.setCellValueFactory(new PropertyValueFactory<>("prenom"));
         naissView.setCellValueFactory(new PropertyValueFactory<>("daten"));
-        lieuView.setCellValueFactory(new PropertyValueFactory<>("lieu"));
+        lieuView.setCellValueFactory(new PropertyValueFactory<>("localisation"));
         superficieView.setCellValueFactory(new PropertyValueFactory<>("superficie"));
         cultureView.setCellValueFactory(new PropertyValueFactory<>("culture"));
-        //avisView.setCellValueFactory(new PropertyValueFactory<>("lieun"));
+        tonnageView.setCellValueFactory(new PropertyValueFactory<>("tonnage"));
         loadPlanteur();
 
         addTime();
+
+    }
+
+    private void falseEditable()
+    {
+        //inscrit false editable
+        img.setEditable(false); imgPc.setEditable(false); certificat.setEditable(false); diplome.setEditable(false); emplCert.setEditable(false);
+        //list false editable
+        email.setEditable(false); lieuN1.setEditable(false); nation1.setEditable(false); contact1.setEditable(false);
+        niveau1.setEditable(false); diplome1.setEditable(false); numDipl1.setEditable(false); methode1.setEditable(false);
+        piece1.setEditable(false); numPc1.setEditable(false); employe1.setEditable(false); employeFem1.setEditable(false);
+        salaire1.setEditable(false); age1.setEditable(false); diplomeRoute1.setEditable(false); certificat1.setEditable(false);
+        emplCert1.setEditable(false); imgPc1.setEditable(false);
 
     }
 
@@ -304,8 +343,8 @@ public class dashbord implements Initializable {
                 !employeFem.getText().isEmpty() && !emplCert.getText().isEmpty();
     }
 
-    @FXML
-    private void enregistrer(ActionEvent event){
+    //Inscription d'un planteur
+    @FXML private void enregistrer(ActionEvent event){
         planteur = new Planteur();
         planteurM = new PlanteurManager();
 
@@ -347,6 +386,7 @@ public class dashbord implements Initializable {
         }
     }
 
+    //Recuperer la liste de planteur
     public void loadPlanteur()
     {
         ObservableList<planteurList> planteurs = FXCollections.observableArrayList();
@@ -356,6 +396,24 @@ public class dashbord implements Initializable {
         }
         plantView.setItems(planteurs);
     }
+
+    public void listClick(MouseEvent event)
+    {
+        planteurList=plantView.getSelectionModel().getSelectedItem();
+        email1.setText(planteurList.getEmail());lieuN1.setText(planteurList.getLieun());
+        nation1.setText(planteurList.getNationnalite()); contact1.setText(planteurList.getContact());
+        niveau1.setText(planteurList.getNiveau()); diplome1.setText(planteurList.getNom_dipl());
+        numDipl1.setText(planteurList.getNum_diplome()); methode1.setText(planteurList.getMethode());
+        piece1.setText(planteurList.getPiece()); numPc1.setText(planteurList.getNum_piece());
+        employe1.setText(planteurList.getNb_emp()); employeFem1.setText(planteurList.getNb_fem());
+        salaire1.setText(planteurList.getSalaire_moy()); age1.setText(planteurList.getAge_mini());
+        diplomeRoute1.setText(planteurList.getDiplome()); certificat1.setText(planteurList.getCertificat_prop());
+        emplCert1.setText(planteurList.getCertificat_decl());
+
+    }
+
+    public void setAvis1 (ActionEvent event) {}
+    public void setAvis2 (ActionEvent event) {}
 
     public void clearvalue(){
         img.setText(""); nom.setText(""); prenom.setText(""); email.setText(""); dateN.getEditor().setText("");

@@ -10,7 +10,7 @@ public class PlanteurManager {
     DB db =new DB();
 
     public int add(Planteur planteur) {
-        String sql1 = "INSERT INTO CONCOURS.PLANTEUR VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql1 = "INSERT INTO CONCOURS.PLANTEUR VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         String sql2 = "INSERT INTO CONCOURS.plantation VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         String sql3 = "INSERT INTO CONCOURS.EMPLOYE VALUES (?, ?, ?, ?, ?, ?, ?)";
         String sql4 = "INSERT INTO CONCOURS.DIPLOME VALUES (?, ?, ?, ?)";
@@ -28,8 +28,7 @@ public class PlanteurManager {
             db.getPstm().setString(7, planteur.getNation());
             db.getPstm().setString(8, planteur.getContact());
             db.getPstm().setString(9, planteur.getNiveau());
-            db.getPstm().setInt(10, planteur.getTypePiec());
-            db.getPstm().setString(11, planteur.getImg());
+            db.getPstm().setString(10, planteur.getImg());
 
             ok = db.executeMaj();
         } catch (Exception ex){
@@ -71,6 +70,7 @@ public class PlanteurManager {
             db.getPstm().setString(2, planteur.getDiplome());
             db.getPstm().setString(3, planteur.getNumDipl());
             db.getPstm().setString(4, "PLTR"+planteur.getDateN());
+            db.getPstm().setInt(5,planteur.getTypeDipl());
 
             ok=db.executeMaj();
         } catch (Exception ex){
