@@ -29,7 +29,7 @@ public class jureListManager {
                 j.setId_jure(rs.getString(1));
                 j.setNomj(rs.getString(2));
                 j.setPrenomj(rs.getString(3));
-                j.setDaten(rs.getString(4));
+                j.setDaten(rs.getDate(4));
                 j.setFonction(rs.getString(5));
                 j.setParticipation(rs.getString(6));
                 j.setExperience(rs.getString(7));

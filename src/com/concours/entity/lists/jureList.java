@@ -1,8 +1,11 @@
 package com.concours.entity.lists;
 
+import java.util.Date;
+
 public class jureList {
 
-    String id_jure, nomj, prenomj,daten,fonction,experience,participation, concours;
+    String id_jure, nomj, prenomj,fonction,experience,participation, concours;
+    Date daten;
 
     public jureList() { }
 
@@ -30,11 +33,11 @@ public class jureList {
         this.prenomj = prenomj;
     }
 
-    public String getDaten() {
+    public Date getDaten() {
         return daten;
     }
 
-    public void setDaten(String daten) {
+    public void setDaten(Date daten) {
         this.daten = daten;
     }
 
