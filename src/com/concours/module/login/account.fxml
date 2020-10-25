@@ -37,7 +37,7 @@
                            <children>
                               <GNAvatarView fx:id="avatar" strokeWidth="0.0" type="CIRCLE">
                                  <image>
-                                    <Image url="@../media/logo.png" />
+                                    <Image url="@../../mediaImg/logo02.png" />
                                  </image>
                                  <effect>
                                     <DropShadow color="#00000035" />

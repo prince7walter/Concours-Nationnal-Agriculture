@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane prefHeight="740.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.concours.module.organisation.organisation">
+    <stylesheets>
+        <URL value="@../../theme/css/material-color.css" />
+        <URL value="@../../theme/css/skeleton.css" />
+        <URL value="@../../theme/css/dark.css" />
+        <URL value="@../../theme/css/bootstrap.css" />
+        <URL value="@../../theme/css/shape.css" />
+        <URL value="@../../theme/css/typographic.css" />
+        <URL value="@../../theme/css/helpers.css" />
+        <URL value="@../../theme/css/master.css" />
+        <URL value="@../../theme/css/login.css" />
+    </stylesheets>
+   <children>
+      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="JURES">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="jureView" layoutX="144.0" layoutY="90.0" prefHeight="200.0" prefWidth="713.0">
+                          <columns>
+                            <TableColumn fx:id="idJView" prefWidth="177.0" text="IDENTIFIANT" />
+                            <TableColumn fx:id="nomJView" prefWidth="211.0" text="NOM" />
+                              <TableColumn fx:id="prenomJView" prefWidth="321.0" text="PRENOMS" />
+                          </columns>
+                        </TableView>
+                        <Separator layoutX="402.0" layoutY="22.0" prefWidth="200.0" />
+                        <Separator layoutX="402.0" layoutY="57.0" prefWidth="200.0" />
+                        <Separator layoutX="402.0" layoutY="325.0" prefWidth="200.0" />
+                        <Separator layoutX="402.0" layoutY="367.0" prefWidth="200.0" />
+                        <Label layoutX="424.0" layoutY="25.0" prefHeight="30.0" prefWidth="156.0" text="Liste de Jure Concours Café" textAlignment="RIGHT" textFill="WHITE">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="420.0" layoutY="328.0" prefHeight="38.0" prefWidth="165.0" text="Liste de Jurés Conours Cacao" textFill="WHITE" />
+                        <TableView fx:id="jureView1" layoutX="147.0" layoutY="385.0" prefHeight="200.0" prefWidth="709.0">
+                           <columns>
+                              <TableColumn fx:id="idJView1" prefWidth="164.0" text="IDENTIFIANT" />
+                              <TableColumn fx:id="nomJView1" prefWidth="219.0" text="NOM" />
+                              <TableColumn fx:id="prenomJView1" prefWidth="321.0" text="PRENOMS" />
+                           </columns>
+                        </TableView>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="CANDIDATS">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="696.0" prefWidth="1000.0">
+                           <children>
+                              <TableView fx:id="candidatView" layoutX="144.0" layoutY="90.0" prefHeight="200.0" prefWidth="713.0">
+                                 <columns>
+                                    <TableColumn fx:id="matriculeCView" prefWidth="177.0" text="MATRICULE" />
+                                    <TableColumn fx:id="nomCView" prefWidth="211.0" text="NOM" />
+                                    <TableColumn fx:id="prenomCView" prefWidth="321.0" text="PRENOMS" />
+                                 </columns>
+                              </TableView>
+                              <Separator layoutX="402.0" layoutY="22.0" prefWidth="200.0" />
+                              <Separator layoutX="402.0" layoutY="57.0" prefWidth="200.0" />
+                              <Separator layoutX="402.0" layoutY="325.0" prefWidth="200.0" />
+                              <Separator layoutX="402.0" layoutY="367.0" prefWidth="200.0" />
+                              <Label layoutX="414.0" layoutY="25.0" prefHeight="30.0" prefWidth="188.0" text="Liste des Candidaits Concours Café" textAlignment="RIGHT" textFill="WHITE">
+                                 <font>
+                                    <Font size="19.0" />
+                                 </font>
+                              </Label>
+                              <Label layoutX="409.0" layoutY="328.0" prefHeight="38.0" prefWidth="192.0" text="Liste des Candidats Conours Cacao" textFill="WHITE" />
+                              <TableView fx:id="candidatView1" layoutX="147.0" layoutY="385.0" prefHeight="200.0" prefWidth="709.0">
+                                 <columns>
+                                    <TableColumn fx:id="matriculeCView1" prefWidth="164.0" text="MATRICULE" />
+                                    <TableColumn fx:id="nomCView1" prefWidth="219.0" text="NOM" />
+                                    <TableColumn fx:id="prenomCView1" prefWidth="321.0" text="PRENOMS" />
+                                 </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                     </children></AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="RESULTAT">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Label layoutX="303.0" layoutY="21.0" prefHeight="35.0" prefWidth="141.0" text="Délbération en attente" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+
+</StackPane>

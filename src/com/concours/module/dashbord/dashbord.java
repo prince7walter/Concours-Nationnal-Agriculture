@@ -1,6 +1,5 @@
 package com.concours.module.dashbord;
 
-
 import animatefx.animation.Pulse;
 import com.concours.database.DB;
 import com.concours.entity.*;
@@ -100,14 +99,9 @@ public class dashbord implements Initializable {
     @FXML private Button avis1;
     @FXML private Button avis2;
 
-
     @FXML private DatePicker dateViste;
     @FXML private ComboBox combo_candidat;
     @FXML private ComboBox combo_heure;
-
-
-
-
 
     //Entités
     private Planteur planteur;
@@ -127,8 +121,19 @@ public class dashbord implements Initializable {
 
     @SuppressWarnings("unchecked")
     @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public void initialize(URL location, ResourceBundle resources)
+    {
+        addEffect();
+        falseEditable();
 
+        addPieceType(); addDiplType(); addCulture(); addMethode();
+
+        loadPlanteur();
+        planteurTableAdd();
+    }
+
+    private void addEffect()
+    {
         rotateTransition.setByAngle(360);
         rotateTransition.setDuration(Duration.seconds(1));
         rotateTransition.setAutoReverse(true);
@@ -137,24 +142,6 @@ public class dashbord implements Initializable {
         addEffect(numPc); addEffect(imgPc); addEffect(niveau); addEffect(combo_diplome); addEffect(diplome); addEffect(localisation); addEffect(superficie);
         addEffect(combo_culture); addEffect(combo_methode); addEffect(certificat);addEffect(combo_piece); addEffect(employe); addEffect(employeFem);
         addEffect(tonnage); addEffect(salaire); addEffect(age); addEffect(emplCert);
-
-        falseEditable();
-
-        addPieceType(); addDiplType(); addCulture(); addMethode();
-
-        //listview element add
-        matriculeView.setCellValueFactory(new PropertyValueFactory<>("matricule"));
-        nomView.setCellValueFactory(new PropertyValueFactory<>("nom"));
-        prenomView.setCellValueFactory(new PropertyValueFactory<>("prenom"));
-        naissView.setCellValueFactory(new PropertyValueFactory<>("daten"));
-        lieuView.setCellValueFactory(new PropertyValueFactory<>("localisation"));
-        superficieView.setCellValueFactory(new PropertyValueFactory<>("superficie"));
-        cultureView.setCellValueFactory(new PropertyValueFactory<>("culture"));
-        tonnageView.setCellValueFactory(new PropertyValueFactory<>("tonnage"));
-        loadPlanteur();
-
-        addTime();
-
     }
 
     private void falseEditable()
@@ -395,6 +382,19 @@ public class dashbord implements Initializable {
             planteurs.add(p);
         }
         plantView.setItems(planteurs);
+    }
+
+    //Affecter les valeurs aux table
+    public void planteurTableAdd()
+    {
+        matriculeView.setCellValueFactory(new PropertyValueFactory<>("matricule"));
+        nomView.setCellValueFactory(new PropertyValueFactory<>("nom"));
+        prenomView.setCellValueFactory(new PropertyValueFactory<>("prenom"));
+        naissView.setCellValueFactory(new PropertyValueFactory<>("daten"));
+        lieuView.setCellValueFactory(new PropertyValueFactory<>("localisation"));
+        superficieView.setCellValueFactory(new PropertyValueFactory<>("superficie"));
+        cultureView.setCellValueFactory(new PropertyValueFactory<>("culture"));
+        tonnageView.setCellValueFactory(new PropertyValueFactory<>("tonnage"));
     }
 
     public void listClick(MouseEvent event)

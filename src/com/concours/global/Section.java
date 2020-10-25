@@ -16,10 +16,7 @@
  */
 package com.concours.global;
 
-/**
- * @author Gleidson Neves da Silveira | gleidisonmt@gmail.com
- * Create on  27/11/2018
- */
+
 public class Section {
 
     private boolean logged;
