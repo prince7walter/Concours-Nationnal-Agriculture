@@ -1,4 +1,4 @@
-package com.concours.module.dashbord;
+package com.concours.module.candidat;
 
 import animatefx.animation.Pulse;
 import com.concours.database.DB;
@@ -6,7 +6,6 @@ import com.concours.entity.*;
 import com.concours.entity.lists.planteurList;
 import com.concours.entity.lists.planteurListManager;
 import com.concours.tools.Notification;
-import com.concours.tools.Outils;
 import javafx.animation.RotateTransition;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -24,15 +23,12 @@ import javafx.stage.Stage;
 import javafx.util.Duration;
 
 import java.io.File;
-import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.List;
 import java.util.ResourceBundle;
 
-public class dashbord implements Initializable {
+public class candidat implements Initializable {
 
     //Parent
     @FXML private StackPane Stack;
@@ -408,7 +404,7 @@ public class dashbord implements Initializable {
         employe1.setText(planteurList.getNb_emp()); employeFem1.setText(planteurList.getNb_fem());
         salaire1.setText(planteurList.getSalaire_moy()); age1.setText(planteurList.getAge_mini());
         diplomeRoute1.setText(planteurList.getDiplome()); certificat1.setText(planteurList.getCertificat_prop());
-        emplCert1.setText(planteurList.getCertificat_decl());
+        emplCert1.setText(planteurList.getCertificat_decl()); imgPc1.setText(planteurList.getPhoto());
 
     }
 

@@ -3,16 +3,12 @@ package com.concours.module.login;
 import animatefx.animation.Flash;
 import animatefx.animation.Pulse;
 import animatefx.animation.SlideInLeft;
-import com.concours.database.DB;
 import com.concours.global.User;
 import com.concours.global.plugin.UserManager;
-import com.concours.global.plugin.ViewManager;
 import com.concours.tools.Notification;
 import com.concours.tools.Outils;
-import com.gn.App;
 import com.gn.GNAvatarView;
 import javafx.animation.RotateTransition;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -25,9 +21,6 @@ import javafx.scene.layout.HBox;
 import javafx.util.Duration;
 
 import java.net.URL;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.ResourceBundle;
 
 public class login implements Initializable {
@@ -137,7 +130,7 @@ public class login implements Initializable {
             User user = userM.get(pseudo,pass);
             if (user != null) {
                 try {
-                    Outils.load(event,"Tableau de bord","/com/concours/module/dashbord/dashbord.fxml");
+                    Outils.load(event,"Tableau de bord", "/com/concours/module/candidat/candidat.fxml");
                 }catch (Exception ex){
                     ex.printStackTrace();
                 }

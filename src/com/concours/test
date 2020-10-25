@@ -55,7 +55,7 @@ String sql ="SELECT * FROM users";
  <?import javafx.scene.text.Text?>
  <?import javafx.scene.text.TextFlow?>
 
- <StackPane prefHeight="735.0" prefWidth="1004.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.concours.module.dashbord.dashbord">
+ <StackPane prefHeight="735.0" prefWidth="1004.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.concours.module.candidat.candidat">
      <stylesheets>
          <URL value="@../../theme/css/material-color.css" />
          <URL value="@../../theme/css/skeleton.css" />

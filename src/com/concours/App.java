@@ -14,7 +14,7 @@ public class App extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/com/concours/module/jures/jures.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/com/concours/module/candidat/candidat.fxml"));
         primaryStage.setTitle("Concours Nationnale de l'Agriculture");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
