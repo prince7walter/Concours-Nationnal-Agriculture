@@ -3,6 +3,7 @@ package com.concours.entity;
 import com.concours.database.DB;
 
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -90,35 +91,5 @@ public class PlanteurManager {
         }
 
         return ok;
-    }
-
-    public List<Planteur> get()
-    {
-        String sql ="SELECT * FROM planteur";
-        List<Planteur> planteurList = new ArrayList<Planteur>();
-        try {
-            db.initPrepar(sql);
-
-            ResultSet rs = db.executeSelect();
-            while (rs.next()){
-                Planteur pl = new Planteur();
-                pl.setMatricule(rs.getNString("matricule"));
-                pl.setNom(rs.getNString("nom"));
-                pl.setPrenom(rs.getNString("prenom"));
-                pl.setDateN(rs.getNString("daten"));
-                pl.setLocalisation(rs.getNString("nom"));
-                pl.setSuperficie(rs.getNString("prenom"));
-                pl.setNumDipl("dd");
-                pl.setCertificat("dd");
-                pl.setDiplome("dd");
-                pl.setNation("dd");
-                pl.setNiveau("dd");
-
-                planteurList.add(pl);
-            }
-        } catch (Exception e){
-            e.printStackTrace();
-        }
-        return planteurList;
     }
 }

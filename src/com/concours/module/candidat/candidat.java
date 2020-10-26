@@ -243,7 +243,7 @@ public class candidat implements Initializable {
             rs=db.executeSelect();
             combo_methode.getItems().add("");
             while (rs.next()){
-                combo_methode.getItems().add(rs.getString(1));
+                combo_methode.getItems().add(rs.getString(1)+"");
             }
         }catch(Exception e){
             e.printStackTrace();
@@ -306,14 +306,6 @@ public class candidat implements Initializable {
         File file= choose.showOpenDialog(stage);
         if (!file.toString().isEmpty())
             emplCert.setText(file.toString());
-    }
-
-    private void addTime()
-    {
-        combo_heure.getItems().add("8H - 9H");
-        combo_heure.getItems().add("9H - 10H");
-        combo_heure.getItems().add("10H - 11H");
-        combo_heure.getItems().add("11H - 12H");
     }
 
     private boolean validInscription(){
@@ -408,7 +400,10 @@ public class candidat implements Initializable {
 
     }
 
-    public void setAvis1 (ActionEvent event) {}
+    public void setAvis1 (ActionEvent event)
+    {
+
+    }
     public void setAvis2 (ActionEvent event) {}
 
     public void clearvalue(){
