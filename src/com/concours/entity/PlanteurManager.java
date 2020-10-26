@@ -2,6 +2,8 @@ package com.concours.entity;
 
 import com.concours.database.DB;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
@@ -9,6 +11,7 @@ import java.util.List;
 
 public class PlanteurManager {
     DB db =new DB();
+
 
     public int add(Planteur planteur) {
         String sql1 = "INSERT INTO CONCOURS.PLANTEUR VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -89,7 +92,7 @@ public class PlanteurManager {
         } catch (Exception ex){
             ex.printStackTrace();
         }
-
         return ok;
     }
+
 }

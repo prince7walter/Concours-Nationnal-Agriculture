@@ -4,11 +4,16 @@ import com.concours.database.DB;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class planteurListManager {
     DB db =new DB();
+    private Connection cnx;
+    private ResultSet rs;
+    private CallableStatement cs;
 
     public ObservableList<planteurList> get ()
     {
@@ -56,6 +61,5 @@ public class planteurListManager {
       }
         return list;
     }
-
 
 }

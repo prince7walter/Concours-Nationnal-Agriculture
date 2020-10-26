@@ -25,6 +25,7 @@ import javafx.util.Duration;
 import java.io.File;
 import java.net.URL;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -95,9 +96,9 @@ public class candidat implements Initializable {
     @FXML private Button avis1;
     @FXML private Button avis2;
 
-    @FXML private DatePicker dateViste;
-    @FXML private ComboBox combo_candidat;
-    @FXML private ComboBox combo_heure;
+    @FXML private Label hideMatricule;
+    @FXML private Label hideMatricule1;
+    @FXML private Label hideMatricule11;
 
     //Entités
     private Planteur planteur;
@@ -354,7 +355,7 @@ public class candidat implements Initializable {
 
         int ok = planteurM.add(planteur);
         if (ok != 0 && validInscription()) {
-            Notification.NotifSucces("Super", "Vous avez ajouter un Candidat");
+            Notification.NotifSucces("Super", "Vous avez ajouté un Candidat");
             clearvalue();
         } else {
             Notification.NotifError("Erreur", "Veuillez saisir tous les champs");
@@ -397,14 +398,24 @@ public class candidat implements Initializable {
         salaire1.setText(planteurList.getSalaire_moy()); age1.setText(planteurList.getAge_mini());
         diplomeRoute1.setText(planteurList.getDiplome()); certificat1.setText(planteurList.getCertificat_prop());
         emplCert1.setText(planteurList.getCertificat_decl()); imgPc1.setText(planteurList.getPhoto());
-
+        hideMatricule.setText(planteurList.getMatricule()); hideMatricule1.setText(planteurList.getNom());
+        hideMatricule11.setText(planteurList.getPrenom());
     }
 
-    public void setAvis1 (ActionEvent event)
-    {
+    public void setAvis1 (ActionEvent event) throws SQLException {
+        db.conforme(hideMatricule.getText());
+        loadPlanteur();
+        planteurTableAdd();
+        Notification.NotifSucces("Super", "Vous avez accepté la candidature de "+hideMatricule1.getText()+" "+hideMatricule11.getText());
 
     }
-    public void setAvis2 (ActionEvent event) {}
+    public void setAvis2 (ActionEvent event) throws SQLException {
+        db.nonconforme(hideMatricule.getText());
+        loadPlanteur();
+        planteurTableAdd();
+        Notification.NotifError("Super", "Vous avez réjété la candidature de "+hideMatricule1.getText()+" "+hideMatricule11.getText());
+
+    }
 
     public void clearvalue(){
         img.setText(""); nom.setText(""); prenom.setText(""); email.setText(""); dateN.getEditor().setText("");

@@ -68,7 +68,7 @@
                                     <Insets right="10.0" />
                                 </padding>
                             </HBox>
-                            <HBox fx:id="box_dateN11" focusTraversable="true" layoutX="568.0" layoutY="87.0" prefHeight="52.0" prefWidth="162.0">
+                            <HBox focusTraversable="true" layoutX="568.0" layoutY="87.0" prefHeight="52.0" prefWidth="162.0">
                                 <styleClass>
                                     <String fx:value="box-light" />
                                     <String fx:value="rounded" />
@@ -110,7 +110,7 @@
                                     </AnchorPane>
                                 </content>
                             </ScrollPane>
-                        <HBox fx:id="box_dateN111" focusTraversable="true" layoutX="752.0" layoutY="87.0" prefHeight="52.0" prefWidth="231.0">
+                        <HBox focusTraversable="true" layoutX="752.0" layoutY="87.0" prefHeight="52.0" prefWidth="231.0">
                            <styleClass>
                               <String fx:value="box-light" />
                               <String fx:value="rounded" />
@@ -122,7 +122,7 @@
                               <ComboBox fx:id="combo_juges" prefHeight="58.0" prefWidth="220.0" promptText="Choisir un juges" style="-fx-border-width: 0;" />
                            </children>
                         </HBox>
-                        <Button fx:id="visiteUp" defaultButton="true" layoutX="538.0" layoutY="172.0" minHeight="35.0" mnemonicParsing="false" onAction="#enregistrer" prefHeight="35.0" prefWidth="242.0" text="Modifier">
+                        <Button fx:id="visiteUp" defaultButton="true" layoutX="538.0" layoutY="172.0" minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="242.0" text="Modifier">
                            <styleClass>
                               <String fx:value="btn-large" />
                               <String fx:value="login" />
@@ -179,7 +179,7 @@
                               <ComboBox fx:id="combo_heure1" prefHeight="58.0" prefWidth="220.0" promptText="Choisir l'heure" style="-fx-border-width: 0;" />
                            </children>
                         </HBox>
-                        <Button fx:id="visiteSet1" defaultButton="true" layoutX="240.0" layoutY="172.0" minHeight="35.0" mnemonicParsing="false" onAction="#enregistrer" prefHeight="35.0" prefWidth="242.0" text="Enregistrer">
+                        <Button fx:id="visiteSet1" defaultButton="true" layoutX="240.0" layoutY="172.0" minHeight="35.0" mnemonicParsing="false" onAction="#enregistrer1" prefHeight="35.0" prefWidth="242.0" text="Enregistrer">
                            <styleClass>
                               <String fx:value="btn-large" />
                               <String fx:value="login" />
@@ -209,7 +209,7 @@
                               </AnchorPane>
                            </content>
                         </ScrollPane>
-                        <HBox fx:id="box_dateN1111" focusTraversable="true" layoutX="752.0" layoutY="87.0" prefHeight="52.0" prefWidth="231.0">
+                        <HBox focusTraversable="true" layoutX="752.0" layoutY="87.0" prefHeight="52.0" prefWidth="231.0">
                            <styleClass>
                               <String fx:value="box-light" />
                               <String fx:value="rounded" />
@@ -221,7 +221,7 @@
                               <ComboBox fx:id="combo_juges1" prefHeight="58.0" prefWidth="220.0" promptText="Choisir un juges" style="-fx-border-width: 0;" />
                            </children>
                         </HBox>
-                        <Button fx:id="visiteUp1" defaultButton="true" layoutX="538.0" layoutY="172.0" minHeight="35.0" mnemonicParsing="false" onAction="#enregistrer" prefHeight="35.0" prefWidth="242.0" text="Modifier">
+                        <Button fx:id="visiteUp1" defaultButton="true" layoutX="538.0" layoutY="172.0" minHeight="35.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="242.0" text="Modifier">
                            <styleClass>
                               <String fx:value="btn-large" />
                               <String fx:value="login" />

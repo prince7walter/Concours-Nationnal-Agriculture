@@ -130,7 +130,7 @@ public class login implements Initializable {
             User user = userM.get(pseudo,pass);
             if (user != null) {
                 try {
-                    Outils.load(event,"Tableau de bord", "/com/concours/module/candidat/candidat.fxml");
+                    Outils.load(event,"Tableau de bord", "/com/concours/module/menu/menu.fxml");
                 }catch (Exception ex){
                     ex.printStackTrace();
                 }

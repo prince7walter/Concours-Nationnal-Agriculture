@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gn.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<?import com.gn.*?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<StackPane prefHeight="740.0" prefWidth="1204.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.concours.module.dashbord.menu">
+    <stylesheets>
+        <URL value="@../../theme/css/material-color.css" />
+        <URL value="@../../theme/css/skeleton.css" />
+        <URL value="@../../theme/css/dark.css" />
+        <URL value="@../../theme/css/bootstrap.css" />
+        <URL value="@../../theme/css/shape.css" />
+        <URL value="@../../theme/css/typographic.css" />
+        <URL value="@../../theme/css/helpers.css" />
+        <URL value="@../../theme/css/master.css" />
+        <URL value="@../../theme/css/login.css" />
+    </stylesheets>
+    <children>
+      <HBox prefHeight="100.0" prefWidth="200.0">
+         <children>
+            <VBox prefHeight="599.0" prefWidth="204.0">
+               <children>
+                      <GNAvatarView fx:id="avatar" strokeWidth="0.0">
+                          <image>
+                              <Image url="@../../mediaImg/logo02.png" />
+                          </image>
+                          <effect>
+                              <DropShadow color="#00000035" />
+                          </effect>
+                      </GNAvatarView>
+
+                  <Label prefHeight="57.0" prefWidth="204.0" text="1" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="30.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label fx:id="lbCand" layoutX="40.0" layoutY="180.0" onMouseClicked="#selectCandidat" prefHeight="57.0" prefWidth="204.0" text="Gestion Des Planteurs" textFill="WHITE" />
+                  <Label fx:id="lbJury" layoutX="10.0" layoutY="237.0" onMouseClicked="#selectJury" prefHeight="57.0" prefWidth="204.0" text="Gestion Des Jurés" textFill="WHITE" />
+                  <Label fx:id="lbOrgan" layoutX="10.0" layoutY="294.0" onMouseClicked="#selectOrganise" prefHeight="57.0" prefWidth="204.0" text="Organisation du Concours" textFill="WHITE" />
+                  <Label fx:id="Result" layoutX="10.0" layoutY="351.0" prefHeight="57.0" prefWidth="204.0" text="Résultat du Concours" textFill="WHITE" />
+               </children>
+            </VBox>
+            <VBox fx:id="principale" onMouseClicked="#selectCandidat" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+         </children>
+         <StackPane.margin>
+            <Insets />
+         </StackPane.margin>
+      </HBox>
+   </children>
+</StackPane>

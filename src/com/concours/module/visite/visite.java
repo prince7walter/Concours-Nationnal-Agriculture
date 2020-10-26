@@ -144,7 +144,7 @@ public class visite implements Initializable {
 
         //CACAO
         ObservableList<visiteList> visiteso = FXCollections.observableArrayList();
-        List<visiteList> viso =visteLM.getf();
+        List<visiteList> viso =visteLM.geto();
         for (visiteList v : viso){
             visiteso.add(v);
         }
@@ -169,6 +169,15 @@ public class visite implements Initializable {
     }
 
     public void enregistrer(ActionEvent event) {
+
+        db.addVisitef(combo_candidat.getSelectionModel().getSelectedItem().toString(),dateViste.getEditor().getText(),combo_heure.getSelectionModel().getSelectedItem().toString(),combo_juges.getSelectionModel().getSelectedItem().toString());
+
+        getView();
+        setView();
+    }
+
+    public void enregistrer1(ActionEvent event) {
+        db.addVisiteo("Franck Loua","12/12/12","9H-10H","Henock Bri");
     }
 
 }
