@@ -72,6 +72,11 @@
                   <Separator layoutX="10.0" layoutY="573.0" prefWidth="200.0" />
                   <Label prefHeight="138.0" prefWidth="204.0" />
                   <Button fx:id="quitte" mnemonicParsing="false" onAction="#quitter" prefWidth="219.0" text="Quitter" />
+                  <Label prefHeight="17.0" prefWidth="205.0" text="Dev by Prince Walter" textFill="WHITE">
+                     <padding>
+                        <Insets left="50.0" />
+                     </padding>
+                  </Label>
                </children>
             </VBox>
             <VBox fx:id="principale" onMouseClicked="#selectCandidat" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
