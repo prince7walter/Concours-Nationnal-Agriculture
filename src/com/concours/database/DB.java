@@ -140,7 +140,7 @@ public class DB {
 
     public void addVisitef (String n,String d, String h, String j)
     {
-        String sql ="call addviste(?,?,?,?,?,?)";
+        String sql ="call addviste(?,?,?,?,?,?,?)";
         try
         {
             getConnection();
@@ -152,29 +152,31 @@ public class DB {
             cs.setString(5,j);
             cs.setString(6,"1");
             cs.setString(7,"5");
+            cs.executeUpdate();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
     }
 
     public void addVisiteo (String n,String d, String h, String j)
     {
-        String sql ="call addviste(?,?,?,?,?)";
+        String sql ="call addviste(?,?,?,?,?,?,?)";
         try
         {
             getConnection();
             cs=cnx.prepareCall(sql);
-            cs.setString(1,"VSTO");
+            cs.setString(1,"VSTF");
             cs.setString(2,n);
             cs.setString(3,d);
             cs.setString(4,h);
             cs.setString(5,j);
+            cs.setString(6,"2");
+            cs.setString(7,"5");
+            cs.executeUpdate();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
-
     }
 }

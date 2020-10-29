@@ -4,6 +4,7 @@ import com.concours.database.DB;
 import com.concours.entity.lists.planteurList;
 import com.concours.entity.lists.visiteList;
 import com.concours.entity.lists.visiteManager;
+import com.concours.tools.Notification;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -169,15 +170,19 @@ public class visite implements Initializable {
     }
 
     public void enregistrer(ActionEvent event) {
-
-        db.addVisitef(combo_candidat.getSelectionModel().getSelectedItem().toString(),dateViste.getEditor().getText(),combo_heure.getSelectionModel().getSelectedItem().toString(),combo_juges.getSelectionModel().getSelectedItem().toString());
-
+        db.addVisitef(combo_candidat.getValue(),dateViste.getEditor().getText(),combo_heure.getValue(),combo_juges.getValue());
         getView();
         setView();
+        Notification.NotifSucces("Super", "Vous avez progammé une visite");
+
     }
 
     public void enregistrer1(ActionEvent event) {
-        db.addVisiteo("Franck Loua","12/12/12","9H-10H","Henock Bri");
+        db.addVisiteo(combo_candidat1.getValue(),dateViste1.getEditor().getText(),combo_heure1.getValue(),combo_juges1.getValue());
+        getView();
+        setView();
+        Notification.NotifSucces("Super", "Vous avez progammé une visite");
+
     }
 
 }

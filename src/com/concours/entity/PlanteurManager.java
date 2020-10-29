@@ -14,10 +14,10 @@ public class PlanteurManager {
 
 
     public int add(Planteur planteur) {
-        String sql1 = "INSERT INTO CONCOURS.PLANTEUR VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql1 = "INSERT INTO CONCOURS.PLANTEUR VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
         String sql2 = "INSERT INTO CONCOURS.plantation VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         String sql3 = "INSERT INTO CONCOURS.EMPLOYE VALUES (?, ?, ?, ?, ?, ?, ?)";
-        String sql4 = "INSERT INTO CONCOURS.DIPLOME VALUES (?, ?, ?, ?)";
+        String sql4 = "INSERT INTO CONCOURS.DIPLOME VALUES (?, ?, ?, ?, ?)";
         String sql5 = "INSERT INTO CONCOURS.PIECE VALUES (?, ?, ?, ?, ?)";
 
         int ok = 0 ;
@@ -33,6 +33,7 @@ public class PlanteurManager {
             db.getPstm().setString(8, planteur.getContact());
             db.getPstm().setString(9, planteur.getNiveau());
             db.getPstm().setString(10, planteur.getImg());
+            db.getPstm().setString(11, "11");
 
             ok = db.executeMaj();
         } catch (Exception ex){

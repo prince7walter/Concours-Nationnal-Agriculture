@@ -1,15 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.String?>
-<?import java.net.URL?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.StackPane?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
 
 <StackPane prefHeight="740.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.concours.module.jures.jures">
     <stylesheets>
@@ -57,6 +51,9 @@
                         <Label fx:id="hideId" layoutX="76.0" layoutY="544.0" text="Label" textFill="#2f2f2f" />
                         <Label fx:id="hideId1" layoutX="86.0" layoutY="554.0" text="Label" textFill="#2f2f2f" />
                         <Label fx:id="hideId11" layoutX="96.0" layoutY="564.0" text="Label" textFill="#2f2f2f" />
+                        <Separator layoutX="401.0" layoutY="27.0" prefWidth="200.0" />
+                        <Separator layoutX="400.0" layoutY="58.0" prefWidth="200.0" />
+                        <Label layoutX="416.0" layoutY="30.0" prefHeight="28.0" prefWidth="167.0" text="Liste des candidature Juré" textFill="WHITE" />
                      </children>
                   </AnchorPane>
             </content>

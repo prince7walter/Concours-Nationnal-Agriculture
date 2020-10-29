@@ -146,7 +146,7 @@ public class candidat implements Initializable {
         //inscrit false editable
         img.setEditable(false); imgPc.setEditable(false); certificat.setEditable(false); diplome.setEditable(false); emplCert.setEditable(false);
         //list false editable
-        email.setEditable(false); lieuN1.setEditable(false); nation1.setEditable(false); contact1.setEditable(false);
+        email1.setEditable(false); lieuN1.setEditable(false); nation1.setEditable(false); contact1.setEditable(false);
         niveau1.setEditable(false); diplome1.setEditable(false); numDipl1.setEditable(false); methode1.setEditable(false);
         piece1.setEditable(false); numPc1.setEditable(false); employe1.setEditable(false); employeFem1.setEditable(false);
         salaire1.setEditable(false); age1.setEditable(false); diplomeRoute1.setEditable(false); certificat1.setEditable(false);
@@ -310,7 +310,7 @@ public class candidat implements Initializable {
     }
 
     private boolean validInscription(){
-        return !img.getText().isEmpty() && !nom.getText().isEmpty() && !prenom.getText().isEmpty() && !email.getText().isEmpty() &&
+        return !img.getText().isEmpty() && !nom.getText().isEmpty() && !prenom.getText().isEmpty() &&
                 !dateN.getEditor().getText().isEmpty() && !lieuN.getText().isEmpty() && !nation.getText().isEmpty() &&
                 !contact.getText().isEmpty() && !numDipl.getText().isEmpty() && !niveau.getText().isEmpty() && !diplome.getText().isEmpty() &&
                 !imgPc.getText().isEmpty() && !localisation.getText().isEmpty() && !superficie.getText().isEmpty() &&

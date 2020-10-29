@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.gn.*?>
+<?import java.lang.*?>
 <?import java.net.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.effect.*?>
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <StackPane prefHeight="740.0" prefWidth="1204.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.concours.module.dashbord.menu">
     <stylesheets>
@@ -25,7 +27,8 @@
          <children>
             <VBox prefHeight="599.0" prefWidth="204.0">
                <children>
-                   <GNAvatarView fx:id="avatar" strokeWidth="0.0">
+                  <Label layoutX="10.0" layoutY="209.0" prefHeight="53.0" prefWidth="174.0" textFill="WHITE" />
+                   <GNAvatarView fx:id="avatar" prefHeight="185.0" prefWidth="204.0" strokeWidth="0.0">
                        <image>
                            <Image url="@../../mediaImg/logo02.png" />
                        </image>
@@ -33,9 +36,9 @@
                            <DropShadow color="#00000035" />
                        </effect>
                    </GNAvatarView>
-                  <Label layoutX="40.0" layoutY="220.0" prefHeight="57.0" prefWidth="204.0" textFill="WHITE" />
+                  <Label layoutX="40.0" layoutY="213.0" prefHeight="53.0" prefWidth="174.0" textFill="WHITE" />
                   <Separator prefHeight="0.0" prefWidth="204.0" />
-                  <Label prefHeight="53.0" prefWidth="174.0" text="TABLEAU DE BORD" textFill="WHITE">
+                  <Label onMouseClicked="#selectDefault" prefHeight="53.0" prefWidth="174.0" text="TABLEAU DE BORD" textFill="WHITE">
                      <VBox.margin>
                         <Insets left="30.0" />
                      </VBox.margin>
@@ -45,22 +48,61 @@
                      <VBox.margin>
                         <Insets left="30.0" />
                      </VBox.margin></Label>
-                  <Separator prefWidth="200.0" />
-                  <Label fx:id="lbJury" layoutX="10.0" layoutY="237.0" onMouseClicked="#selectJury" prefHeight="57.0" prefWidth="204.0" text="Gestion Des Jurés" textFill="WHITE">
+                  <Separator layoutX="10.0" layoutY="266.0" prefWidth="200.0" />
+                  <Label layoutX="40.0" layoutY="220.0" onMouseClicked="#selectJury" prefHeight="57.0" prefWidth="204.0" text="Gestion des Jurés" textFill="WHITE">
                      <VBox.margin>
                         <Insets left="30.0" />
                      </VBox.margin></Label>
                   <Separator prefWidth="200.0" />
+                  <Label fx:id="lbJury" layoutX="10.0" layoutY="237.0" onMouseClicked="#selectVisite" prefHeight="57.0" prefWidth="204.0" text="Gestion Des Visites" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin></Label>
+                  <Separator prefHeight="14.0" prefWidth="204.0" />
                   <Label fx:id="lbOrgan" layoutX="10.0" layoutY="294.0" onMouseClicked="#selectOrganise" prefHeight="57.0" prefWidth="204.0" text="Organisation du Concours" textFill="WHITE">
                      <VBox.margin>
                         <Insets left="30.0" />
                      </VBox.margin></Label>
                   <Separator prefWidth="200.0" />
-                  <Label prefHeight="199.0" prefWidth="204.0" />
-                  <Button mnemonicParsing="false" prefWidth="219.0" text="Quitter" />
+                  <Label fx:id="lbOrgan1" layoutX="40.0" layoutY="519.0" onMouseClicked="#selectResult" prefHeight="57.0" prefWidth="204.0" text="Nos médailles" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets left="30.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Separator layoutX="10.0" layoutY="573.0" prefWidth="200.0" />
+                  <Label prefHeight="138.0" prefWidth="204.0" />
+                  <Button fx:id="quitte" mnemonicParsing="false" onAction="#quitter" prefWidth="219.0" text="Quitter" />
                </children>
             </VBox>
-            <VBox fx:id="principale" onMouseClicked="#selectCandidat" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS" />
+            <VBox fx:id="principale" onMouseClicked="#selectCandidat" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+                <StackPane prefHeight="735.0" prefWidth="1000.0">
+
+                    <children>
+                        <AnchorPane prefHeight="615.0" prefWidth="1000.0" styleClass="text-24">
+
+                            <Label layoutX="185.0" layoutY="281.0" prefHeight="149.0" prefWidth="596.0" text="CONCOURS NATION DE L'AGRICULTURE EDITION 2020" textFill="WHITE" BorderPane.alignment="CENTER">
+                                <font>
+                                    <Font size="24.0" />
+                                </font>
+                                <styleClass>
+                                    <String fx:value="context-menu" />
+                                    <String fx:value="gn-title" />
+                                    <String fx:value="h3" />
+                                    <String fx:value="jfx-text-field" />
+                                    <String fx:value="jfx-hamburger" />
+                                </styleClass>
+                            </Label>
+                        <opaqueInsets>
+                           <Insets left="30.0" />
+                        </opaqueInsets>
+
+
+
+                        </AnchorPane>
+                    </children>
+
+                </StackPane>
+            </VBox>
          </children>
          <StackPane.margin>
             <Insets />

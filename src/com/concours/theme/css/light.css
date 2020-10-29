@@ -12,7 +12,7 @@
   -dark-text        : -elegant;
 
   /* icon and tex */
-  -background-color : white;
+  -background-color : #808080;
   -icon-color       : -dark-gray;
   -text-color       : -dark-gray;
 
@@ -84,6 +84,7 @@
     -fx-font-weight: BOLD;
     -fx-font-size: 10px;
     -fx-text-fill: WHITE;
+    -background-color : #808080;
 }
 
 
